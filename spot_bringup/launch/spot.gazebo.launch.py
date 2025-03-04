@@ -71,6 +71,9 @@ def generate_launch_description():
             {'use_sim_time': True},
             {'robot_description': robot_desc},
             {"publish_frequency": 200.0},
+        ],
+        remappings=[
+            ('/joint_states', '/spot/joint_states')
         ]
     )
 
