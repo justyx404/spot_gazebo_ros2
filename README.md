@@ -14,6 +14,9 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     <img src="assets/edgar_mine_nav.gif" height="200">
 </div>
 
+## ROS graph
+![rosgraph](assets/rosgraph.png)
+
 ## Note
 1. All mesh and material files are referenced using Fuel URLs from fuel.gazebosim.org for convenience.
 2. Currently all body camera and depth sensors are not used. Thus they are disabled to save computations.
