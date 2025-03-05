@@ -232,6 +232,8 @@ Visualization Manager:
           Value: false
         lidar_link:
           Value: true
+        map:
+          Value: true
         odom:
           Value: true
         rear_left_ee:
@@ -296,6 +298,8 @@ Visualization Manager:
               rear_right_lower_leg:
                 rear_right_ee:
                   {}
+        map:
+          {}
         odom:
           {}
       Update Interval: 0
@@ -402,9 +406,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 26; 95; 180
-      Max Intensity: 9.697813034057617
+      Max Intensity: 9.909431457519531
       Min Color: 0; 0; 0
-      Min Intensity: 0.08541719615459442
+      Min Intensity: 0.0864265114068985
       Name: PointCloud2
       Position Transformer: XYZ
       Selectable: true
@@ -420,6 +424,27 @@ Visualization Manager:
         Value: /spot/lidar/points
       Use Fixed Frame: true
       Use rainbow: true
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_updates
+      Use Timestamp: false
       Value: true
   Enabled: true
   Global Options:

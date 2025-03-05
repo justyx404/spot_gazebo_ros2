@@ -74,6 +74,14 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     ```bash
     ros2 launch spot2_bringup spot.gazebo.launch.py
     ```
+
+### Tasks Demonstration
+
+## SLAM
+<div style="display: flex; gap: 10px;">
+    <img src="assets/demo_MOLA_rviz.png" height="300">
+</div>
+
 ## Acknowledgement
 * [champ](https://github.com/chvmp/champ/tree/ros2) ros2 branch.
 * [spot_config](https://github.com/chvmp/robots/tree/master/configs/spot_config) with some modification.
