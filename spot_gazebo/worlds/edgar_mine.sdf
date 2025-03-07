@@ -24,7 +24,6 @@
     </plugin>
 
     <gui fullscreen="0">
-      <!-- 3D scene -->
       <plugin filename="MinimalScene" name="3D View">
         <ignition-gui>
           <title>3D View</title>
@@ -36,10 +35,10 @@
         <scene>scene</scene>
         <ambient_light>0.4 0.4 0.4</ambient_light>
         <background_color>0.8 0.8 0.8</background_color>
-        <camera_pose>-1.39 8.96 2.06 0.00 0.22 0.92</camera_pose>
+        <!-- <camera_pose>-48.45 0.64 2.06 0.00 0.03 0.77</camera_pose> -->
+        <camera_pose>-36.70 17.11 9.48 0.00 0.67 -3.03</camera_pose>
       </plugin>
 
-      <!-- Plugins that add functionality to the scene -->
       <plugin filename="EntityContextMenuPlugin" name="Entity context menu">
         <ignition-gui>
           <property key="state" type="string">floating</property>
@@ -76,7 +75,6 @@
         </ignition-gui>
       </plugin>
 
-      <!-- World control -->
       <plugin filename="WorldControl" name="World control">
         <ignition-gui>
           <title>World control</title>
@@ -99,7 +97,6 @@
         <use_event>true</use_event>
       </plugin>
 
-      <!-- World statistics -->
       <plugin filename="WorldStats" name="World stats">
         <ignition-gui>
           <title>World stats</title>
@@ -122,14 +119,12 @@
         <iterations>true</iterations>
       </plugin>
 
-      <!-- Inspector -->
       <plugin filename="ComponentInspector" name="Component inspector">
         <ignition-gui>
           <property type="string" key="state">docked</property>
         </ignition-gui>
       </plugin>
 
-      <!-- Entity tree -->
       <plugin filename="EntityTree" name="Entity tree">
         <ignition-gui>
           <property type="string" key="state">docked</property>
@@ -189,11 +184,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_01_collision">
@@ -211,11 +201,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_02_collision">
@@ -233,11 +218,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_03_collision">
@@ -255,11 +235,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_04_collision">
@@ -277,11 +252,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_05_collision">
@@ -299,11 +269,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_06_collision">
@@ -343,11 +308,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_08_collision">
@@ -365,11 +325,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_09_collision">
@@ -387,11 +342,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
 
         <collision name="section_10_collision">
@@ -409,11 +359,6 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
-          <!-- <plugin
-            filename="ignition-gazebo-thermal-system"
-            name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin> -->
         </visual>
       </link>
     </model>
@@ -425,25 +370,33 @@
     </include>
 
     <include>
-      <pose>30.36 13.79 0.92 0 0 -1.55</pose>
+      <pose>8 15.40 0.69 0 0 -0.07</pose>
       <name>rescue_randy_2</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
     </include>
 
     <include>
-      <pose>22.34 12.88 0.86 -0.16 0 -2.95</pose>
+      <pose>-38.84 5.73 0.67 0.03 0.00 -1.29</pose>
+      <name>rescue_randy_3</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
+    </include>
+
+    <include>
+      <pose>28.25 6.32 0.64 -0.15 0.06 -2.55</pose>
       <name>rescue_randy_sitting_1</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
     </include>
 
     <include>
-      <pose>28.25 6.32 0.64 -0.15 0.06 -2.55</pose>
+      <pose>-50.97 33.45 0.51 -0.05 0.03 1.03</pose>
       <name>rescue_randy_sitting_2</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
     </include>
 
     <model name="spot">
-      <pose>0.87 9.99 0.95 -0.05 -0.05 0.71</pose>
+      <pose>-46.48 2.05 1.05 -0.01 -0.03 0.68</pose>
+      <!-- <pose>0.87 9.99 0.95 -0.05 -0.05 0.71</pose> -->
+      <!-- <pose>-14.95 5.17 1.2 0.07 0.01 -0.02</pose> -->
       <include merge="true">
         <uri>package://spot_description/models/spot</uri>
       </include>
