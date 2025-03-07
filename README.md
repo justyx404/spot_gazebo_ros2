@@ -75,12 +75,22 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     ros2 launch spot2_bringup spot.gazebo.launch.py
     ```
 
-### Tasks Demonstration
+## Tasks Demonstration
 
-## SLAM
+### SLAM
 <div style="display: flex; gap: 10px;">
-    <img src="assets/demo_MOLA_rviz.png" height="300">
+    <img src="assets/demo_MOLA_rviz.png" width="400">
 </div>
+
+### LiDAR Odometry
+<div style="display: flex; gap: 10px;">
+    <img src="assets/trajectory_comparison.png" width="400">
+</div>
+
+### Object detection
+
+### Navigation
+
 
 ## Acknowledgement
 * [champ](https://github.com/chvmp/champ/tree/ros2) ros2 branch.
