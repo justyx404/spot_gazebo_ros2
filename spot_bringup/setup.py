@@ -25,6 +25,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'thermal_to_rgb = spot_bringup.thermal_to_rgb:main',
             # 'spot_controller = spot_ros2_gz_controller.spot_controller:main',
         ],
     },
