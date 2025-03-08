@@ -87,7 +87,13 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     <img src="assets/trajectory_comparison.png" width="400">
 </div>
 
-### Object detection
+### Object Detection, Segmentation and Pose Estimation
+<div style="display: flex; gap: 10px;">
+    <img src="assets/yolo_thermal_1.png" height="200" width="200">
+    <img src="assets/yolo_thermal_3.png" height="200" width="200">
+    <img src="assets/yolo_thermal_2.png" height="200" width="200">
+</div>
+
 
 ### Navigation
 
