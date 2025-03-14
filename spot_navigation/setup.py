@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import find_packages, setup
 
-package_name = 'spot_navigation2'
+package_name = 'spot_navigation'
 
 setup(
     name=package_name,
