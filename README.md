@@ -72,7 +72,7 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     ```
 4. Launch the simulation
     ```bash
-    ros2 launch spot2_bringup spot.gazebo.launch.py
+    ros2 launch spot_bringup spot.gazebo.launch.py
     ```
 
 ## Tasks Demonstration
