@@ -28,7 +28,6 @@ from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description():
     # Get the launch directory
-    # bringup_dir = get_package_share_directory('nav2_bringup')
     bringup_dir = get_package_share_directory('spot_navigation')
 
     namespace = LaunchConfiguration('namespace')
@@ -55,7 +54,7 @@ def generate_launch_description():
 
     # Create our own temporary YAML files that include substitutions
     param_substitutions = {
-        'use_sim_time': use_sim_time,
+        'use_sim_time':  use_sim_time,
         'yaml_filename': map_yaml_file}
 
     configured_params = ParameterFile(
@@ -107,6 +106,12 @@ def generate_launch_description():
     declare_log_level_cmd = DeclareLaunchArgument(
         'log_level', default_value='info',
         description='log level')
+
+    rviz_arg = DeclareLaunchArgument(
+        'rviz',
+        default_value='false', 
+        description='Open RViz.'
+    )
 
     load_nodes = GroupAction(
         condition=IfCondition(PythonExpression(['not ', use_composition])),
@@ -169,6 +174,14 @@ def generate_launch_description():
         ],
     )
 
+    # Visualize in RViz
+    rviz = Node(
+       package='rviz2',
+       executable='rviz2',
+       arguments=['-d', os.path.join(bringup_dir, 'config', 'spot_nav.rviz')],
+       condition=IfCondition(LaunchConfiguration('rviz'))
+    )
+
     # Create the launch description and populate
     ld = LaunchDescription()
 
@@ -185,9 +198,13 @@ def generate_launch_description():
     ld.add_action(declare_container_name_cmd)
     ld.add_action(declare_use_respawn_cmd)
     ld.add_action(declare_log_level_cmd)
+    ld.add_action(rviz_arg)
 
     # Add the actions to launch all of the localiztion nodes
     ld.add_action(load_nodes)
     ld.add_action(load_composable_nodes)
+
+    # Add RVIZ visualization if true
+    ld.add_action(rviz)
 
     return ld
