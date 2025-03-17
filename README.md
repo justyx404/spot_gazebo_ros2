@@ -94,8 +94,22 @@ A ROS 2 Humble simulation package for the Boston Dynamics Spot robot using Ignit
     <img src="assets/yolo_thermal_2.png" height="200" width="200">
 </div>
 
-
 ### Navigation
+1. Start the gazebo siimulation
+```
+ros2 launch spot_bringup spot.gazebo.launch.py rviz:=false
+```
+
+2. Use `SLAM` to build a map
+```
+ros2 launch spot_navigation online_async_launch.py
+```
+
+3. Once the map is built and saved
+```
+ros2 launch spot_navigation localization_launch.py map:=simple_tunnel.yaml use_sim_time:=true rviz:=true
+```
+NOTE currently the quality of AMCL is really bad so better find something better to use
 
 
 ## Acknowledgement
