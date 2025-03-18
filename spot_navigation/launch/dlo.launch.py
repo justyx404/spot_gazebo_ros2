@@ -58,7 +58,8 @@ def generate_launch_description():
     	parameters = [dlo_yaml_path, dlo_params_yaml_path],
     	remappings = [
     		('keyframes', 'dlo/odom_node/pointcloud/keyframe'),
-    		('map', 'dlo/map_node/map')
+    		('map', 'dlo/map_node/map'),
+            ('save_pcd', 'dlo_map/save_pcd')
     	]
     )
 
