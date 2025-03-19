@@ -1,0 +1,40 @@
+/icp_localization:
+  ros__parameters:
+    pcd_file_path: "/root/ros2_ws/maps/dlo_map.pcd"
+    input_filters_config_path: "config/input_filteres_velodyne_puck.yaml"
+    
+    icp_localization_ros2:
+      range_data_topic: "/spot/lidar/points"
+      num_accumulated_range_data: 1
+      imu_data_topic: "/imu/data"
+      odometry_data_topic: "/dlo/odom_node/odom"
+      is_use_odometry: true
+      is_provide_odom_frame: true
+      gravity_vector_filter_time_constant: 0.01
+      fixed_frame: "map"
+      min_num_odom_msgs_before_ready: 5
+
+    initial_pose:
+      x: 0.0 
+      y: 0.0 
+      z: 0.0 
+      roll: 0.0  # degrees  
+      pitch: 0.0 # degrees
+      yaw: 0.0  # degrees
+
+    calibration:
+      imu_to_range_sensor:
+        x: -0.011
+        y: -0.0234
+        z: 0.044
+        roll: 0.0
+        pitch: 0.0
+        yaw: 0.0
+
+    odometry_source_to_range_sensor:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0 
