@@ -1,0 +1,64 @@
+/**:
+  ros__parameters:
+
+    dlo/version: 1.4.3
+
+    dlo/adaptiveParams: true
+
+    dlo/imu: false
+    dlo/gravityAlign: false
+
+    dlo/odomNode/odom_frame: "odom"   #odom
+    dlo/odomNode/child_frame: "base_link"    #base_link
+
+    dlo/mapNode/publishFreq: 1.0
+    dlo/mapNode/leafSize: 0.25
+    dlo/odomNode/initialPose/use: true   #false
+
+    dlo/odomNode/initialPose/position/x: 0.0
+    dlo/odomNode/initialPose/position/y: 0.0
+    dlo/odomNode/initialPose/position/z: 0.0
+
+    dlo/odomNode/initialPose/orientation/w: 1.0
+    dlo/odomNode/initialPose/orientation/x: 0.0
+    dlo/odomNode/initialPose/orientation/y: 0.0
+    dlo/odomNode/initialPose/orientation/z: 0.0
+
+    dlo/odomNode/preprocessing/cropBoxFilter/use: true
+    dlo/odomNode/preprocessing/cropBoxFilter/size: 1.0
+
+    dlo/odomNode/preprocessing/voxelFilter/scan/use: true
+    dlo/odomNode/preprocessing/voxelFilter/scan/res: 0.25
+
+    dlo/odomNode/preprocessing/voxelFilter/submap/use: true
+    dlo/odomNode/preprocessing/voxelFilter/submap/res: 0.5
+
+    dlo/odomNode/keyframe/threshD: 5.0
+    dlo/odomNode/keyframe/threshR: 45.0
+
+    dlo/odomNode/submap/keyframe/knn: 10
+    dlo/odomNode/submap/keyframe/kcv: 10
+    dlo/odomNode/submap/keyframe/kcc: 10
+
+    dlo/odomNode/imu/calibTime: 3
+    dlo/odomNode/imu/bufferSize: 2000
+
+    dlo/odomNode/gicp/minNumPoints: 10
+
+    dlo/odomNode/gicp/s2s/kCorrespondences: 10
+    dlo/odomNode/gicp/s2s/maxCorrespondenceDistance: 1.0
+    dlo/odomNode/gicp/s2s/maxIterations: 32
+    dlo/odomNode/gicp/s2s/transformationEpsilon: 0.01
+    dlo/odomNode/gicp/s2s/euclideanFitnessEpsilon: 0.01
+
+    dlo/odomNode/gicp/s2s/ransac/iterations: 5
+    dlo/odomNode/gicp/s2s/ransac/outlierRejectionThresh: 1.0
+
+    dlo/odomNode/gicp/s2m/kCorrespondences: 20
+    dlo/odomNode/gicp/s2m/maxCorrespondenceDistance: 0.5
+    dlo/odomNode/gicp/s2m/maxIterations: 32
+    dlo/odomNode/gicp/s2m/transformationEpsilon: 0.01
+    dlo/odomNode/gicp/s2m/euclideanFitnessEpsilon: 0.01
+
+    dlo/odomNode/gicp/s2m/ransac/iterations: 5
+    dlo/odomNode/gicp/s2m/ransac/outlierRejectionThresh: 1.0
