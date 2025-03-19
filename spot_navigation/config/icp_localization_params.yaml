@@ -1,7 +1,6 @@
 /icp_localization:
   ros__parameters:
-    pcd_file_path: "/root/ros2_ws/maps/dlo_map.pcd"
-    input_filters_config_path: "config/input_filteres_velodyne_puck.yaml"
+    pcd_file_path: "/home/yg5d6/ros2_ws/src/spot_ros2_gazebo/spot_navigation/maps/simple_tunnel.pcd"
     
     icp_localization_ros2:
       range_data_topic: "/spot/lidar/points"
