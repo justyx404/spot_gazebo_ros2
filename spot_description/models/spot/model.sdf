@@ -230,7 +230,7 @@
       <child>lidar_base_link</child>
     </joint>
     <joint name='lidar_joint' type='fixed'>
-      <parent>front_rail</parent>
+      <parent>lidar_base_link</parent>
       <child>lidar_link</child>
     </joint>
 
@@ -239,7 +239,7 @@
       <child>camera_base_link</child>
     </joint>
     <joint name='thermal_camera_joint' type='fixed'>
-      <parent>rear_rail</parent>
+      <parent>camera_base_link</parent>
       <child>thermal_camera_link</child>
     </joint>
 
