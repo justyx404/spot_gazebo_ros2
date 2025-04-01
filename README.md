@@ -111,6 +111,12 @@ ros2 launch spot_navigation localization_launch.py map:=simple_tunnel.yaml use_s
 ```
 NOTE currently the quality of AMCL is really bad so better find something better to use
 
+## TODO
+1. Integrate a better controller like
+    * https://github.com/ShuoYangRobotics/A1-QP-MPC-Controller
+    * https://github.com/dfki-ric-underactuated-lab/dfki-quad
+    * https://github.com/bostoncleek/quadruped_control
+
 
 ## Acknowledgement
 * [champ](https://github.com/chvmp/champ/tree/ros2) ros2 branch.
