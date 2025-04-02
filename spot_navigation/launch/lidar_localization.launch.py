@@ -20,6 +20,18 @@ def generate_launch_description():
 
     ld = launch.LaunchDescription()
 
+    pcd_converter = Node(
+        package='pcl_ros',
+        executable='pcd_to_pointcloud',
+        parameters=[{
+            'file_name': 'src/spot_ros2_gazebo/spot_navigation/maps/simple_tunnel.pcd',
+            'tf_frame': 'map'
+        }],
+        remappings=[
+            ('/cloud_pcd', '/map')
+        ]
+    )
+
     localization_param_dir = launch.substitutions.LaunchConfiguration(
         'localization_param_dir',
         default=os.path.join(
@@ -72,6 +84,7 @@ def generate_launch_description():
         )
     )
 
+    ld.add_action(pcd_converter)
     ld.add_action(from_unconfigured_to_inactive)
     ld.add_action(from_inactive_to_active)
     ld.add_action(lidar_localization)
