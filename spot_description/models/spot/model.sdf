@@ -17,14 +17,14 @@
       <collision name="base_link_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/body_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/body_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="base_link_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/body.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/body.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -108,7 +108,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Lidar%203d%20v1/tip/files/meshes/lidar_3d_v1.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/lidar_3d_v1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -119,14 +119,14 @@
       <collision name="payload_base">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/csiro_data61_spot_sensor_config_1/tip/files/meshes/PPV4_Sim_Base.STL</uri>
+            <uri>package://spot_description/models/spot/meshes/PPV4_Sim_Base.STL</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="payload_base">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/csiro_data61_spot_sensor_config_1/tip/files/meshes/PPV4_Sim_Base.STL</uri>
+            <uri>package://spot_description/models/spot/meshes/PPV4_Sim_Base.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -139,14 +139,14 @@
       <collision name="payload_birdcage">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/csiro_data61_spot_sensor_config_1/tip/files/meshes/birdcage.STL</uri>
+            <uri>package://spot_description/models/spot/meshes/birdcage.STL</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="payload_birdcage">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/csiro_data61_spot_sensor_config_1/tip/files/meshes/birdcage.STL</uri>
+            <uri>package://spot_description/models/spot/meshes/birdcage.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -911,14 +911,14 @@
       <collision name="front_left_hip_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_left_hip_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/front_left_hip_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="front_left_hip_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_left_hip.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/front_left_hip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -958,14 +958,14 @@
       <collision name="front_left_upper_leg_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_left_upper_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/front_left_upper_leg_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="front_left_upper_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_left_upper_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/front_left_upper_leg.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1005,7 +1005,7 @@
         <geometry>
           <mesh>
             <scale>0.82 0.97 0.98</scale>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_left_lower_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/front_left_lower_leg_collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1048,7 +1048,7 @@
       <visual name="front_left_lower_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_left_lower_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/front_left_lower_leg.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1133,14 +1133,14 @@
       <collision name="front_right_hip_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_right_hip_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/front_right_hip_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="front_right_hip_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_right_hip.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/front_right_hip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1179,14 +1179,14 @@
       <collision name="front_right_upper_leg_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_right_upper_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/front_right_upper_leg_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="front_right_upper_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_right_upper_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/front_right_upper_leg.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1226,7 +1226,7 @@
         <geometry>
           <mesh>
             <scale>0.82 0.97 0.98</scale>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_right_lower_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/front_right_lower_leg_collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1269,7 +1269,7 @@
       <visual name="front_right_lower_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/front_right_lower_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/front_right_lower_leg.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1467,14 +1467,14 @@
       <collision name="rear_left_hip_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_left_hip_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_left_hip_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="rear_left_hip_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_left_hip.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_left_hip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1513,14 +1513,14 @@
       <collision name="rear_left_upper_leg_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_left_upper_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_left_upper_leg_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="rear_left_upper_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_left_upper_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_left_upper_leg.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1560,7 +1560,7 @@
         <geometry>
           <mesh>
             <scale>0.82 0.97 0.98</scale>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_left_lower_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_left_lower_leg_collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1603,7 +1603,7 @@
       <visual name="rear_left_lower_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_left_lower_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_left_lower_leg.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -1687,14 +1687,14 @@
       <collision name="rear_right_hip_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_right_hip_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_right_hip_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="rear_right_hip_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_right_hip.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_right_hip.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1733,14 +1733,14 @@
       <collision name="rear_right_upper_leg_collision">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_right_upper_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_right_upper_leg_collision.stl</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="rear_right_upper_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_right_upper_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_right_upper_leg.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1780,7 +1780,7 @@
         <geometry>
           <mesh>
             <scale>0.82 0.97 0.98</scale>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_right_lower_leg_collision.stl</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_right_lower_leg_collision.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1823,7 +1823,7 @@
       <visual name="rear_right_lower_leg_visual">
         <geometry>
           <mesh>
-            <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/BOSDYN_SPOT/tip/files/meshes/rear_right_lower_leg.dae</uri>
+            <uri>package://spot_description/models/spot/meshes/rear_right_lower_leg.dae</uri>
           </mesh>
         </geometry>
         <material>
