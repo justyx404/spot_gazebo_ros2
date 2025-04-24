@@ -162,7 +162,7 @@
 
     <atmosphere type="adiabatic">
        <temperature>288</temperature>
-       <temperature_gradient>0.02 </temperature_gradient>
+       <temperature_gradient>0.02</temperature_gradient>
     </atmosphere>
 
     <model name="Edgar_Mine_Virtual_STIX">
