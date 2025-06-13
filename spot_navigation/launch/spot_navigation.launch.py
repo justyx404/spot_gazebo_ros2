@@ -8,6 +8,17 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     spot_nav_pkg = FindPackageShare('spot_navigation')
+    spot_bringup_pkg = FindPackageShare('spot_bringup')
+
+    # Include Spot Gazebo launch file
+    spot_gazebo_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            PathJoinSubstitution([spot_bringup_pkg, 'launch', 'spot.gazebo.launch.py'])
+        ]),
+        launch_arguments={
+            'rviz': 'false'
+        }.items()
+    )
 
     # Include DLO launch file
     dlo_launch = IncludeLaunchDescription(
@@ -34,6 +45,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        spot_gazebo_launch,
         dlo_launch,
         lidar_localization_launch,
         rviz_node
