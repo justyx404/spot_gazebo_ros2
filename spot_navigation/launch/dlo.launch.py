@@ -29,7 +29,10 @@ def generate_launch_description():
     	package = 'direct_lidar_odometry',
     	executable = 'dlo_odom_node',
     	output = 'screen',
-    	parameters = [dlo_yaml_path],
+    	parameters = [
+			dlo_yaml_path,
+			{'use_sim_time': True}		
+		],
     	remappings = [
     		('pointcloud', pointcloud_topic_cfg),
     		('imu', imu_topic_cfg),

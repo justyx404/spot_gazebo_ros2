@@ -25,7 +25,8 @@ def generate_launch_description():
         executable='pcd_to_pointcloud',
         parameters=[{
             'file_name': 'src/spot_ros2_gazebo/spot_navigation/maps/simple_tunnel.pcd',
-            'tf_frame': 'map'
+            'tf_frame': 'map',
+            'use_sim_time': True
         }],
         remappings=[
             ('/cloud_pcd', '/map')
@@ -44,7 +45,9 @@ def generate_launch_description():
         namespace='',
         package='lidar_localization_ros2',
         executable='lidar_localization_node',
-        parameters=[localization_param_dir],
+        parameters=[
+            localization_param_dir,
+            {'use_sim_time': True}],
         remappings=[('/cloud','/spot/lidar/points')],
         output='screen')
 

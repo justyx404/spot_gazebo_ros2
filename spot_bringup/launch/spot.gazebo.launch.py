@@ -114,7 +114,8 @@ def generate_launch_description():
        package='rviz2',
        executable='rviz2',
        arguments=['-d', os.path.join(pkg_spot_bringup, 'config', 'spot.rviz')],
-       condition=IfCondition(LaunchConfiguration('rviz'))
+       condition=IfCondition(LaunchConfiguration('rviz')),
+       parameters=[{'use_sim_time': True}]
     )
 
     return LaunchDescription([
