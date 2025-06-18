@@ -53,6 +53,7 @@ def generate_launch_description():
         executable='parameter_bridge',
         output='screen',
         parameters=[{
+            'use_sim_time': True,
             'config_file': os.path.join(pkg_spot_bringup, 'config', 'spot_bridge.yaml'),
             'qos_overrides./tf_static.publisher.durability': 'transient_local',
         }]
