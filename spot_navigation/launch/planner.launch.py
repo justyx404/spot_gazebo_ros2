@@ -1,8 +1,7 @@
-import os
 from launch import LaunchDescription
-from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
 def generate_launch_description():
     # Declare a launch argument for the lidar topic, in case you want to change it easily
@@ -33,7 +32,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        lidar_topic_arg,
         use_sim_time_arg,
+        lidar_topic_arg,
         local_planner_node
     ])

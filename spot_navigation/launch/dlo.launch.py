@@ -9,6 +9,12 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     spot_nav_pkg = FindPackageShare('spot_navigation')
 
+    use_sim_time_arg = DeclareLaunchArgument(
+		'use_sim_time',
+		default_value='false',  # Set to 'true' for simulation
+		description='Use simulation (Gazebo) clock if true'
+	)
+
     pointcloud_topic_cfg = LaunchConfiguration('pointcloud_topic', default='/spot/lidar/points')
     declare_pointcloud_topic_arg = DeclareLaunchArgument(
     	'pointcloud_topic',
@@ -31,7 +37,7 @@ def generate_launch_description():
     	output = 'screen',
     	parameters = [
 			dlo_yaml_path,
-			{'use_sim_time': True}		
+			{'use_sim_time': LaunchConfiguration('use_sim_time')}		
 		],
     	remappings = [
     		('pointcloud', pointcloud_topic_cfg),
@@ -44,6 +50,7 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+		use_sim_time_arg,
     	declare_pointcloud_topic_arg,
     	declare_imu_topic_arg,
     	dlo_odom_node,

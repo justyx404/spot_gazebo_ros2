@@ -19,6 +19,12 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
 
     ld = launch.LaunchDescription()
+    
+    use_sim_time_arg = launch.actions.DeclareLaunchArgument(
+        'use_sim_time',
+        default_value='false',
+        description='Use simulation (Gazebo) clock if true'
+    )
 
     pcd_converter = Node(
         package='pcl_ros',
@@ -26,7 +32,7 @@ def generate_launch_description():
         parameters=[{
             'file_name': 'src/spot_ros2_gazebo/spot_navigation/maps/simple_tunnel.pcd',
             'tf_frame': 'map',
-            'use_sim_time': True
+            'use_sim_time': launch.substitutions.LaunchConfiguration('use_sim_time'),
         }],
         remappings=[
             ('/cloud_pcd', '/map')
@@ -47,7 +53,7 @@ def generate_launch_description():
         executable='lidar_localization_node',
         parameters=[
             localization_param_dir,
-            {'use_sim_time': True}],
+            {'use_sim_time': launch.substitutions.LaunchConfiguration('use_sim_time')}],
         remappings=[('/cloud','/spot/lidar/points')],
         output='screen')
 
@@ -87,6 +93,7 @@ def generate_launch_description():
         )
     )
 
+    ld.add_action(use_sim_time_arg)
     ld.add_action(pcd_converter)
     ld.add_action(from_unconfigured_to_inactive)
     ld.add_action(from_inactive_to_active)
