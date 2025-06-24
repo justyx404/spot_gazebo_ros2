@@ -411,6 +411,12 @@
       <pose>77.800000 -40.000000 0.004000 -1.570796 0 0.785398</pose>
     </include>
 
+    <include>
+      <name>barrel</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
+      <pose>40.0 3.0 0.0 0.0 0.0 1.5</pose>
+    </include>
+
     <model name="spot">
       <pose>40.0 0.0 0.7 0.0 0.0 1.5</pose>
       <include merge="true">
