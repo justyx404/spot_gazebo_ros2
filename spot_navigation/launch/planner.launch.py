@@ -31,8 +31,19 @@ def generate_launch_description():
         ]
     )
 
+    path_follower_node = Node(
+        package='local_planner_motion_primitives',
+        executable='pure_pursuit_controller',
+        name='pure_pursuit_controller',
+        output='screen',
+        parameters=[
+            {'use_sim_time': LaunchConfiguration('use_sim_time')} # Pass the use_sim_time argument
+        ],
+    )
+
     return LaunchDescription([
         use_sim_time_arg,
         lidar_topic_arg,
-        local_planner_node
+        local_planner_node,
+        path_follower_node
     ])
