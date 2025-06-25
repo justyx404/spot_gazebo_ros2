@@ -7,7 +7,7 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    current_pkg = FindPackageShare('direct_lidar_odometry')
+    dlo_pkg = FindPackageShare('direct_lidar_odometry')
     spot_nav_pkg = FindPackageShare('spot_navigation')
 
     rviz_cfg = LaunchConfiguration('rviz', default='false')
@@ -16,6 +16,12 @@ def generate_launch_description():
     	default_value = rviz_cfg,
     	description = 'Whether or not to launch RViz'
     )
+    
+    use_sim_time_arg = DeclareLaunchArgument(
+		'use_sim_time',
+		default_value='false',  # Set to 'true' for simulation
+		description='Use simulation (Gazebo) clock if true'
+	)
 
     pointcloud_topic_cfg = LaunchConfiguration('pointcloud_topic', default='/spot/lidar/points')
     declare_pointcloud_topic_arg = DeclareLaunchArgument(
@@ -31,15 +37,15 @@ def generate_launch_description():
     	description = 'Input IMU topic name'
     )
 
-    dlo_yaml_path = PathJoinSubstitution([current_pkg, 'cfg', 'dlo.yaml'])
-    dlo_params_yaml_path = PathJoinSubstitution([current_pkg, 'cfg', 'params.yaml'])
+    dlo_yaml_path = PathJoinSubstitution([dlo_pkg, 'cfg', 'dlo.yaml'])
+    dlo_mapping_yaml_path = PathJoinSubstitution([dlo_pkg, 'cfg', 'dlo_mapping.yaml'])
 
     dlo_odom_node = Node(
     	name = 'dlo_odom',
     	package = 'direct_lidar_odometry',
     	executable = 'dlo_odom_node',
     	output = 'screen',
-    	parameters = [dlo_yaml_path, dlo_params_yaml_path],
+    	parameters = [dlo_yaml_path, {'use_sim_time': LaunchConfiguration('use_sim_time')}],
     	remappings = [
     		('pointcloud', pointcloud_topic_cfg),
     		('imu', imu_topic_cfg),
@@ -55,7 +61,7 @@ def generate_launch_description():
     	package = 'direct_lidar_odometry',
     	executable = 'dlo_map_node',
     	output = 'screen',
-    	parameters = [dlo_yaml_path, dlo_params_yaml_path],
+    	parameters = [dlo_mapping_yaml_path, {'use_sim_time': LaunchConfiguration('use_sim_time')}],
     	remappings = [
     		('keyframes', 'dlo/odom_node/pointcloud/keyframe'),
     		('map', 'dlo/map_node/map'),
@@ -63,7 +69,7 @@ def generate_launch_description():
     	]
     )
 
-    rviz_config_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'dlo.rviz'])
+    rviz_config_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'dlo_mapping.rviz'])
     rviz_node = Node(
     	name = 'dlo_rviz',
     	package = 'rviz2',
@@ -75,6 +81,7 @@ def generate_launch_description():
 
     return LaunchDescription([
     	declare_rviz_arg,
+        use_sim_time_arg,
     	declare_pointcloud_topic_arg,
     	declare_imu_topic_arg,
     	dlo_odom_node,
