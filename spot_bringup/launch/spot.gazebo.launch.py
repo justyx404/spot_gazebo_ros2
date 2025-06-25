@@ -24,6 +24,12 @@ def generate_launch_description():
         description='Open RViz.'
     )
 
+    rviz_config_file_arg = DeclareLaunchArgument(
+        'rviz_config_file',
+        default_value='spot.rviz',
+        description='RViz configuration file to use'
+    )
+
     # Setup to launch the simulator and Gazebo world
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     pkg_spot_gazebo = get_package_share_directory('spot_gazebo')
@@ -109,11 +115,15 @@ def generate_launch_description():
 
     # Visualize in RViz
     rviz = Node(
-       package='rviz2',
-       executable='rviz2',
-       arguments=['-d', os.path.join(pkg_spot_bringup, 'config', 'spot.rviz')],
-       condition=IfCondition(LaunchConfiguration('rviz')),
-       parameters=[{'use_sim_time': True}]
+        package='rviz2',
+        executable='rviz2',
+        arguments=['-d', PathJoinSubstitution([
+        pkg_spot_bringup, 
+        'config', 
+        LaunchConfiguration('rviz_config_file')
+        ])],
+        condition=IfCondition(LaunchConfiguration('rviz')),
+        parameters=[{'use_sim_time': True}]
     )
 
     return LaunchDescription([
