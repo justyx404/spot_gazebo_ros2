@@ -40,12 +40,13 @@ def generate_launch_description():
 			{'use_sim_time': LaunchConfiguration('use_sim_time')}		
 		],
     	remappings = [
-    		('pointcloud', pointcloud_topic_cfg),
-    		('imu', imu_topic_cfg),
-    		('odom', 'dlo/odom_node/odom'),
-    		('pose', 'dlo/odom_node/pose'),
-    		('kfs', 'dlo/odom_node/odom/keyframe'),
-    		('keyframe', 'dlo/odom_node/pointcloud/keyframe')
+    		('imu'		 	, imu_topic_cfg),
+    		('pointcloud'	, pointcloud_topic_cfg),
+			('filtered_scan', 'dlo/odom_node/filtered_scan'),
+    		('odom'         , 'dlo/odom_node/odom'),
+    		('pose'			, 'dlo/odom_node/pose'),
+    		('kfs' 			, 'dlo/odom_node/odom/keyframe'),
+    		('keyframe'		, 'dlo/odom_node/pointcloud/keyframe')
     	]
     )
 
