@@ -118,9 +118,9 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         arguments=['-d', PathJoinSubstitution([
-        pkg_spot_bringup, 
-        'config', 
-        LaunchConfiguration('rviz_config_file')
+            pkg_spot_bringup, 
+            'config', 
+            LaunchConfiguration('rviz_config_file')
         ])],
         condition=IfCondition(LaunchConfiguration('rviz')),
         parameters=[{'use_sim_time': True}]
@@ -129,6 +129,7 @@ def generate_launch_description():
     return LaunchDescription([
         world_file_arg,
         rviz_arg,
+        rviz_config_file_arg,
         gz_sim,
         bridge,
         robot_state_publisher,
