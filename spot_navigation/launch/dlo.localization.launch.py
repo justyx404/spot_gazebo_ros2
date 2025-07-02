@@ -85,7 +85,9 @@ def generate_launch_description():
             {'use_sim_time': LaunchConfiguration('use_sim_time')}
         ],
         remappings= [
-            ('global_map', 'dlo/localization_node/global_map'),
+            ('global_map'   , 'dlo/localization_node/global_map'),
+            ('filtered_scan', 'dlo/odom_node/filtered_scan'),
+            ('odom'         , 'dlo/odom_node/odom'),
         ]       
 	)
     
