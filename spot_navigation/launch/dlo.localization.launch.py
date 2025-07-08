@@ -66,13 +66,13 @@ def generate_launch_description():
 			{'use_sim_time': LaunchConfiguration('use_sim_time')}		
 		],
     	remappings = [
-    		('imu'		 	, imu_topic_cfg),
-    		('pointcloud'	, pointcloud_topic_cfg),
-			('filtered_scan', 'dlo/odom_node/filtered_scan'),
-    		('odom'         , 'dlo/odom_node/odom'),
-    		('pose'			, 'dlo/odom_node/pose'),
-    		('kfs' 			, 'dlo/odom_node/odom/keyframe'),
-    		('keyframe'		, 'dlo/odom_node/pointcloud/keyframe')
+    		('imu'		 , imu_topic_cfg),
+    		('pointcloud', pointcloud_topic_cfg),
+			('submap'    , 'dlo/odom_node/submap'),
+    		('odom'      , 'dlo/odom_node/odom'),
+    		('pose'		 , 'dlo/odom_node/pose'),
+    		('kfs' 		 , 'dlo/odom_node/odom/keyframe'),
+    		('keyframe'	 , 'dlo/odom_node/pointcloud/keyframe')
     	]
     )
 
@@ -85,9 +85,9 @@ def generate_launch_description():
             {'use_sim_time': LaunchConfiguration('use_sim_time')}
         ],
         remappings= [
-            ('global_map'   , 'dlo/localization_node/global_map'),
-            ('filtered_scan', 'dlo/odom_node/filtered_scan'),
-            ('odom'         , 'dlo/odom_node/odom'),
+            ('global_map', 'dlo/localization_node/global_map'),
+            ('scan'      , 'dlo/odom_node/submap'),
+            ('odom'      , 'dlo/odom_node/odom'),
         ]       
 	)
     
@@ -135,7 +135,7 @@ def generate_launch_description():
     	declare_imu_topic_arg,
     	dlo_odom_node,
         dlo_localization_node,
-        static_map_to_odom_node,
+        # static_map_to_odom_node,
         shutdown_on_odom_exit,
         shutdown_on_localization_exit
     ])
