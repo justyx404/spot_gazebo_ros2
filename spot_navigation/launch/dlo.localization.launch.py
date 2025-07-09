@@ -91,6 +91,21 @@ def generate_launch_description():
         ]       
 	)
     
+    # Event handlers to shutdown if either node exits
+    shutdown_on_odom_exit = RegisterEventHandler(
+        OnProcessExit(
+            target_action=dlo_odom_node,
+            on_exit=[Shutdown()]
+        )
+    )
+
+    shutdown_on_localization_exit = RegisterEventHandler(
+        OnProcessExit(
+            target_action=dlo_localization_node,
+            on_exit=[Shutdown()]
+        )
+    )
+    # Use this for debugging purposes
     static_map_to_odom_node = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
@@ -111,21 +126,6 @@ def generate_launch_description():
         ],
     )
 
-    # Event handlers to shutdown if either node exits
-    shutdown_on_odom_exit = RegisterEventHandler(
-        OnProcessExit(
-            target_action=dlo_odom_node,
-            on_exit=[Shutdown()]
-        )
-    )
-
-    shutdown_on_localization_exit = RegisterEventHandler(
-        OnProcessExit(
-            target_action=dlo_localization_node,
-            on_exit=[Shutdown()]
-        )
-    )
-
     return LaunchDescription([
         rviz_arg,
         rviz_config_file_arg,
@@ -135,7 +135,7 @@ def generate_launch_description():
     	declare_imu_topic_arg,
     	dlo_odom_node,
         dlo_localization_node,
-        # static_map_to_odom_node,
         shutdown_on_odom_exit,
         shutdown_on_localization_exit
+        # static_map_to_odom_node,
     ])
