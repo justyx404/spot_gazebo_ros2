@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="empty_world">
+    <scene>
+      <grid>false</grid>
+    </scene>
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="ignition-gazebo-physics-system" name="ignition::gazebo::systems::Physics"></plugin>
+    <plugin filename="ignition-gazebo-user-commands-system" name="ignition::gazebo::systems::UserCommands"></plugin>
+    <plugin filename="ignition-gazebo-scene-broadcaster-system" name="ignition::gazebo::systems::SceneBroadcaster"></plugin>
+
+
+    <!--Ground Plane-->
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>150 150</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>150 150</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+
+    <!--Light-->
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.90000000000000002</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+  <!--Husky Robot (Fuel Model)-->
+  <include>
+    <pose>11.183 36.48 0.15 0 0 -1.5708</pose>
+      <uri>
+      https://fuel.gazebosim.org/1.0/OpenRobotics/models/MARBLE_HUSKY_SENSOR_CONFIG_5
+      </uri>
+  </include>
+
+  <!--Custom Asset-->
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Transformer</uri>
+    <name>Transformer_1</name>
+    <pose>0 0 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Transformer</uri>
+    <name>Transformer_2</name>
+    <pose>25.24 0 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 1</uri>
+    <name>Electrical_Array_1_1</name>
+    <pose>0 -5.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 1</uri>
+    <name>Electrical_Array_1_2</name>
+    <pose>25.24 -5.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 2</uri>
+    <name>Electrical_Array_2_1</name>
+    <pose>0 -8.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 2</uri>
+    <name>Electrical_Array_2_2</name>
+    <pose>25.24 -8.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 2</uri>
+    <name>Electrical_Array_2_3</name>
+    <pose>0 -23.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 2</uri>
+    <name>Electrical_Array_2_4</name>
+    <pose>25.24 -23.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 2</uri>
+    <name>Electrical_Array_2_5</name>
+    <pose>14 -17.92 0 0 0 1.5708</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 3</uri>
+    <name>Electrical_Array_3_1</name>
+    <pose>0 -11.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 3</uri>
+    <name>Electrical_Array_3_2</name>
+    <pose>25.24 -11.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 3</uri>
+    <name>Electrical_Array_3_3</name>
+    <pose>0 -26.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 3</uri>
+    <name>Electrical_Array_3_4</name>
+    <pose>25.24 -26.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 3</uri>
+    <name>Electrical_Array_3_5</name>
+    <pose>11 -17.92 0 0 0 1.5708</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_1</name>
+    <pose>0 -14.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_2</name>
+    <pose>25.24 -14.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_3</name>
+    <pose>0 -20.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_4</name>
+    <pose>25.24 -20.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_5</name>
+    <pose>0 -29.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_6</name>
+    <pose>25.24 -29.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_7</name>
+    <pose>8 -17.92 0 0 0 1.5708</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 4</uri>
+    <name>Electrical_Array_4_8</name>
+    <pose>17 -17.92 0 0 0 1.5708</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 5</uri>
+    <name>Electrical_Array_5_1</name>
+    <pose>0 -17.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 5</uri>
+    <name>Electrical_Array_5_2</name>
+    <pose>25.24 -17.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 5</uri>
+    <name>Electrical_Array_5_3</name>
+    <pose>0 -32.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 5</uri>
+    <name>Electrical_Array_5_4</name>
+    <pose>25.24 -32.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 6</uri>
+    <name>Electrical_Array_6_1</name>
+    <pose>0 -34.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 6</uri>
+    <name>Electrical_Array_6_2</name>
+    <pose>25.24 -34.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 7</uri>
+    <name>Electrical_Array_7_1</name>
+    <pose>0 -17.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 7</uri>
+    <name>Electrical_Array_7_2</name>
+    <pose>25.24 -17.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 8</uri>
+    <name>Electrical_Array_8_1</name>
+    <pose>0 -32.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Array 8</uri>
+    <name>Electrical_Array_8_2</name>
+    <pose>25.24 -32.92 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Wires 1</uri>
+    <name>Electrical_Wires_1_1</name>
+    <pose>0 -17.92 3.6 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Wires 1</uri>
+    <name>Electrical_Wires_1_2</name>
+    <pose>25.24 -17.92 3.6 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Wires 2</uri>
+    <name>Electrical_Wires_2</name>
+    <pose>11 -17.92 3.69 0 0 1.5708</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Control Room</uri>
+    <name>Control Room</name>
+    <pose>11.9 18.91 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Building 1</uri>
+    <name>Electrical_Building_1</name>
+    <pose>-21.9 -20.485 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Building 2</uri>
+    <name>Electrical_Building_2</name>
+    <pose>-21.9 17.726 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Electrical Shack</uri>
+    <name>Electrical_Shack</name>
+    <pose>29.834 34.675 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Security Booth</uri>
+    <name>Security_Booth</name>
+    <pose>-3.712 49.844 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Parking Area</uri>
+    <name>Parking_Area</name>
+    <pose>5.788 50.544 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Fence</uri>
+    <name>Fence</name>
+    <pose>3.2 5.285 0 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>https://fuel.gazebosim.org/1.0/kevinhalim9/models/Gate</uri>
+    <name>Gate</name>
+    <pose>3.2 5.285 0 0 0 0</pose>
+  </include>
+  </world>
+</sdf>
