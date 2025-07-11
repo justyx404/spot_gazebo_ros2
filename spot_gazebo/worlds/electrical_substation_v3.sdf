@@ -1,17 +1,34 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
-  <world name="empty_world">
+  <world name="electrical_substation_v3">
     <scene>
       <grid>false</grid>
     </scene>
-    <physics name="1ms" type="ignored">
+    <physics name="1ms" type="ode">
       <max_step_size>0.002</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
-    <plugin filename="ignition-gazebo-physics-system" name="ignition::gazebo::systems::Physics"></plugin>
-    <plugin filename="ignition-gazebo-user-commands-system" name="ignition::gazebo::systems::UserCommands"></plugin>
-    <plugin filename="ignition-gazebo-scene-broadcaster-system" name="ignition::gazebo::systems::SceneBroadcaster"></plugin>
 
+    <plugin
+        filename="ignition-gazebo-physics-system"
+        name="ignition::gazebo::systems::Physics">
+    </plugin>
+
+    <plugin
+        filename="ignition-gazebo-sensors-system"
+        name="ignition::gazebo::systems::Sensors">
+        <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <plugin
+        filename="ignition-gazebo-scene-broadcaster-system"
+        name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+
+    <plugin
+        filename="ignition-gazebo-user-commands-system"
+        name="ignition::gazebo::systems::UserCommands">
+    </plugin>
 
     <!--Ground Plane-->
     <model name='ground_plane'>
@@ -76,6 +93,13 @@
       https://fuel.gazebosim.org/1.0/OpenRobotics/models/MARBLE_HUSKY_SENSOR_CONFIG_5
       </uri>
   </include>
+
+  <model name="spot">
+    <pose>18.22 5.29 0.7 0.0 0.0 0.1</pose>
+    <include merge="true">
+      <uri>package://spot_description/models/spot</uri>
+    </include>
+  </model>
 
   <!--Custom Asset-->
   <include>
