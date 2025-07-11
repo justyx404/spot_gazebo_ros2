@@ -48,11 +48,12 @@ def generate_launch_description():
     	parameters = [dlo_yaml_path, {'use_sim_time': LaunchConfiguration('use_sim_time')}],
     	remappings = [
     		('pointcloud', pointcloud_topic_cfg),
-    		('imu', imu_topic_cfg),
-    		('odom', 'dlo/odom_node/odom'),
-    		('pose', 'dlo/odom_node/pose'),
-    		('kfs', 'dlo/odom_node/odom/keyframe'),
-    		('keyframe', 'dlo/odom_node/pointcloud/keyframe')
+    		('imu'		 , imu_topic_cfg),
+    		('odom'		 , 'dlo/odom_node/odom'),
+			('submap'    , 'dlo/odom_node/submap'),
+    		('pose'		 , 'dlo/odom_node/pose'),
+    		('kfs'		 , 'dlo/odom_node/odom/keyframe'),
+    		('keyframe'	 , 'dlo/odom_node/pointcloud/keyframe')
     	]
     )
 
@@ -64,8 +65,8 @@ def generate_launch_description():
     	parameters = [dlo_mapping_yaml_path, {'use_sim_time': LaunchConfiguration('use_sim_time')}],
     	remappings = [
     		('keyframes', 'dlo/odom_node/pointcloud/keyframe'),
-    		('map', 'dlo/map_node/map'),
-            ('save_pcd', 'dlo_map/save_pcd')
+    		('map'	    , 'dlo/map_node/map'),
+            ('save_pcd' , 'dlo_map/save_pcd')
     	]
     )
 
