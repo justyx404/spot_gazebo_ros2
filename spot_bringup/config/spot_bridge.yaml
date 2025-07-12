@@ -31,14 +31,14 @@
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "ignition.msgs.PointCloudPacked"
   direction: GZ_TO_ROS
+- ros_topic_name: "/spot/imu"
+  gz_topic_name: "/model/spot/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "ignition.msgs.IMU"
+  direction: GZ_TO_ROS
 # Controller
 - ros_topic_name: "/spot/joint_trajectory"
   gz_topic_name: "/model/spot/joint_trajectory"
   ros_type_name: "trajectory_msgs/msg/JointTrajectory"
   gz_type_name: "ignition.msgs.JointTrajectory"
   direction: ROS_TO_GZ
-# - ros_topic_name: "/tf"
-#   gz_topic_name: "/model/spot/pose"
-#   ros_type_name: "tf2_msgs/msg/TFMessage"
-#   gz_type_name: "ignition.msgs.Pose_V"
-#   direction: GZ_TO_ROS
