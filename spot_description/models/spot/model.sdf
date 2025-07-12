@@ -1353,7 +1353,7 @@
         <always_on>1</always_on>
         <update_rate>5</update_rate>
         <topic>model/spot/imu</topic>
-        <!-- <imu>
+        <imu>
           <enable_orientation>0</enable_orientation>
           <angular_velocity>
             <x>
@@ -1425,7 +1425,7 @@
               </noise>
             </z>
           </linear_acceleration>
-        </imu> -->
+        </imu>
       </sensor>
     </link>
     <joint name="imu_j" type="fixed">
