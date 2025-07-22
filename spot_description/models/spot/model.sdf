@@ -173,7 +173,7 @@
               <max_angle>3.14159</max_angle>
             </horizontal>
             <vertical>
-              <samples>16</samples>
+              <samples>32</samples>
               <resolution>1</resolution>
               <min_angle>-0.261799</min_angle>
               <max_angle>0.261799</max_angle>
@@ -1351,7 +1351,7 @@
       </inertial> -->
       <sensor name="imu" type="imu">
         <always_on>1</always_on>
-        <update_rate>10</update_rate>
+        <update_rate>100</update_rate>
         <topic>model/spot/imu</topic>
         <imu>
           <enable_orientation>0</enable_orientation>
