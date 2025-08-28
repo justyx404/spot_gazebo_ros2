@@ -16,11 +16,6 @@
   gz_type_name: "ignition.msgs.Odometry"
   direction: GZ_TO_ROS
 # Sensors
-- ros_topic_name: "/spot/thermal_camera"
-  gz_topic_name: "/model/spot/thermal_camera"
-  ros_type_name: "sensor_msgs/msg/Image"
-  gz_type_name: "ignition.msgs.Image"
-  direction: GZ_TO_ROS
 - ros_topic_name: "/spot/scan"
   gz_topic_name: "/model/spot/lidar"
   ros_type_name: "sensor_msgs/msg/LaserScan"
@@ -36,6 +31,11 @@
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "ignition.msgs.IMU"
   direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/thermal_camera"
+  gz_topic_name: "/model/spot/thermal_camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: GZ_TO_ROS
 - ros_topic_name: "/spot/camera/back_fisheye/image_raw"
   gz_topic_name: "/model/spot/camera/back_fisheye_image"
   ros_type_name: "sensor_msgs/msg/Image"
@@ -43,6 +43,26 @@
   direction: GZ_TO_ROS
 - ros_topic_name: "/spot/camera/back_fisheye/camera_info"
   gz_topic_name: "/model/spot/camera/back_fisheye_image/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/frontleft_fisheye/image_raw"
+  gz_topic_name: "/model/spot/camera/frontleft_fisheye_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/frontleft_fisheye/camera_info"
+  gz_topic_name: "/model/spot/camera/frontleft_fisheye_image/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/frontright_fisheye/image_raw"
+  gz_topic_name: "/model/spot/camera/frontright_fisheye_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/frontright_fisheye/camera_info"
+  gz_topic_name: "/model/spot/camera/frontright_fisheye_image/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "ignition.msgs.CameraInfo"
   direction: GZ_TO_ROS
