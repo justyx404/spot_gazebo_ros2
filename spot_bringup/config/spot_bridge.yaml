@@ -36,6 +36,16 @@
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "ignition.msgs.IMU"
   direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/back_fisheye/image_raw"
+  gz_topic_name: "/model/spot/camera/back_fisheye_image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
+  direction: GZ_TO_ROS
+- ros_topic_name: "/spot/camera/back_fisheye/camera_info"
+  gz_topic_name: "/model/spot/camera/back_fisheye_image/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "ignition.msgs.CameraInfo"
+  direction: GZ_TO_ROS
 # Controller
 - ros_topic_name: "/spot/joint_trajectory"
   gz_topic_name: "/model/spot/joint_trajectory"

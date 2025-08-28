@@ -361,7 +361,7 @@
         </ode>
       </physics>
     </joint>
-    <!-- <link name="camera_back">
+    <link name="camera_back">
       <pose>-0.425 0 0.01 -0 0.3 3.1415926535897931</pose>
       <inertial>
         <mass>1e-05</mass>
@@ -639,8 +639,7 @@
             <near>0.1</near>
             <far>4</far>
           </clip>
-          <noise><
- 
+          <noise>
             <type>gaussian</type>
             <mean>0</mean>
             <stddev>0.007</stddev>
@@ -893,8 +892,7 @@
           </limit>
         </ode>
       </physics>
-    </joint> -->
-
+    </joint>
     <link name="front_left_hip">
       <pose>0.29785 0.055 0 0 -0 0</pose>
       <inertial>
