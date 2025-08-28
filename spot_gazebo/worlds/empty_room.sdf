@@ -274,5 +274,53 @@
                 <uri>package://spot_description/models/spot</uri>
             </include>
         </model>
+
+        <model name="apriltag_box">
+            <static>false</static>
+            <pose>3.5 -1.36 -0.2 0 0 0</pose> 
+            <link name="link">
+                <collision name="collision">
+                    <geometry>
+                        <box>
+                            <size>1 1 1</size>
+                        </box>
+                    </geometry>
+                </collision>
+
+                <visual name="visual_box">
+                    <geometry>
+                        <box>
+                            <size>1 1 1</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <ambient>0 0 1 1</ambient>
+                        <diffuse>0 0 1 1</diffuse>
+                        <specular>0.5 0.5 0.5 1</specular>
+                    </material>
+                </visual>
+
+                <visual name="visual">
+                  <pose>-0.501 0 0 0 -1.5707 0</pose>
+                  <geometry>
+                    <box>
+                      <size>0.5 0.5 0.001</size>
+                    </box>
+                  </geometry>
+                  <material>
+                    <ambient>1 1 1 1</ambient>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>0.5 0.5 0.5 1</specular>
+                    <pbr>
+                      <metal>
+                        <albedo_map>materials/textures/tag41_12_00000.png</albedo_map>
+                        <roughness>0.5</roughness>
+                        <metalness>0.0</metalness>
+                      </metal>
+                    </pbr>
+                  </material>
+                </visual>
+            </link>
+        </model>
     </world>
 </sdf>
