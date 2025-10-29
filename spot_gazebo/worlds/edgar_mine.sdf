@@ -189,7 +189,7 @@
         <collision name="section_01_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_01.DAE</uri>
+              <uri>meshes/collision/Edgar_Section_01_Collision.DAE</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
