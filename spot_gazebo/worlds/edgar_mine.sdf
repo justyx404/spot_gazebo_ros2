@@ -206,7 +206,7 @@
         <collision name="section_02_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_02.dae</uri>
+              <uri>meshes/collision/Edgar_Section_02.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -214,7 +214,7 @@
         <visual name="section_02_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_02.dae</uri>
+              <uri>meshes/visual/Edgar_Section_02.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
