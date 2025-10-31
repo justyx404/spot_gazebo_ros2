@@ -172,7 +172,7 @@
         <collision name="starting_area_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_StartingArea.dae</uri>
+              <uri>meshes/collision/Edgar_StartingArea.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -180,7 +180,7 @@
         <visual name="starting_area_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_StartingArea.dae</uri>
+              <uri>meshes/visual/Edgar_StartingArea.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -189,7 +189,7 @@
         <collision name="section_01_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_01.dae</uri>
+              <uri>meshes/collision/Edgar_Section_01.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -197,10 +197,15 @@
         <visual name="section_01_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_01.dae</uri>
+              <uri>meshes/visual/Edgar_Section_01.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_02_collision">
@@ -218,12 +223,17 @@
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_03_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_03.dae</uri>
+              <uri>meshes/collision/Edgar_Section_03.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -231,16 +241,21 @@
         <visual name="section_03_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_03.dae</uri>
+              <uri>meshes/visual/Edgar_Section_03.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_04_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_04.dae</uri>
+              <uri>meshes/collision/Edgar_Section_04.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -248,16 +263,21 @@
         <visual name="section_04_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_04.dae</uri>
+              <uri>meshes/visual/Edgar_Section_04.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_05_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_05.dae</uri>
+              <uri>meshes/collision/Edgar_Section_05.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -265,16 +285,21 @@
         <visual name="section_05_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_05.dae</uri>
+              <uri>meshes/visual/Edgar_Section_05.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_06_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_06.dae</uri>
+              <uri>meshes/collision/Edgar_Section_06.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -282,7 +307,7 @@
         <visual name="section_06_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_06.dae</uri>
+              <uri>meshes/visual/Edgar_Section_06.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -296,7 +321,7 @@
         <collision name="section_07_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_07.dae</uri>
+              <uri>meshes/collision/Edgar_Section_07.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -304,16 +329,21 @@
         <visual name="section_07_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_07.dae</uri>
+              <uri>meshes/visual/Edgar_Section_07.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_08_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_08.dae</uri>
+              <uri>meshes/collision/Edgar_Section_08.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -321,16 +351,21 @@
         <visual name="section_08_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_08.dae</uri>
+              <uri>meshes/visual/Edgar_Section_08.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_09_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_09.dae</uri>
+              <uri>meshes/collision/Edgar_Section_09.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -338,16 +373,21 @@
         <visual name="section_09_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_09.dae</uri>
+              <uri>meshes/visual/Edgar_Section_09.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
 
         <collision name="section_10_collision">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_10.dae</uri>
+              <uri>meshes/collision/Edgar_Section_10.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -355,10 +395,15 @@
         <visual name="section_10_visual">
           <geometry>
             <mesh>
-              <uri>meshes/Edgar_Section_10.dae</uri>
+              <uri>meshes/visual/Edgar_Section_10.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>285.0</temperature>
+          </plugin>
         </visual>
       </link>
     </model>
