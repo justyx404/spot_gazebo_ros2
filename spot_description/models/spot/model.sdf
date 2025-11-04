@@ -81,21 +81,8 @@
       </inertial>
     </link>
 
-    <!-- Re-enabled once controller can factor mass/inertia -->
     <link name="lidar_base_link">
       <pose>0.223 0 0.0805 0 0 0</pose>
-      <!-- <inertial>
-        <pose>0 0 0.03585 0 0 0</pose>
-        <mass>0.83</mass>
-        <inertia>
-          <ixx>0.0009080594249999999</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0009080594249999999</iyy>
-          <iyz>0</iyz>
-          <izz>0.0011049624</izz>
-        </inertia>
-      </inertial> -->
       <collision name="collision">
         <pose>0 0 0.03585 0 0 0</pose>
         <geometry>
@@ -1336,7 +1323,7 @@
       </physics>
     </joint>
     <link name="imu">
-      <!-- <inertial>
+      <inertial>
         <mass>1e-05</mass>
         <inertia>
           <ixx>0.001</ixx>
@@ -1346,7 +1333,7 @@
           <iyz>1e-06</iyz>
           <izz>0.001</izz>
         </inertia>
-      </inertial> -->
+      </inertial>
       <sensor name="imu" type="imu">
         <always_on>1</always_on>
         <update_rate>100</update_rate>

@@ -35,7 +35,6 @@
         <scene>scene</scene>
         <ambient_light>0.4 0.4 0.4</ambient_light>
         <background_color>0.8 0.8 0.8</background_color>
-        <!-- <camera_pose>-48.45 0.64 2.06 0.00 0.03 0.77</camera_pose> -->
         <camera_pose>-36.70 17.11 9.48 0.00 0.67 -3.03</camera_pose>
       </plugin>
 
@@ -130,25 +129,17 @@
           <property type="string" key="state">docked</property>
         </ignition-gui>
       </plugin>
-
-      <plugin filename="ImageDisplay" name="Image Display">
-        <ignition-gui>
-          <title>Thermal camera</title>
-          <property key="state" type="string">floating</property>
-          <property key="width" type="double">350</property>
-          <property key="height" type="double">315</property>
-        </ignition-gui>
-        <topic>model/spot/thermal_camera</topic>
-        <topic_picker>false</topic_picker>
-      </plugin>
-
-      <plugin filename="VisualizeLidar" name="Visualize Lidar">
-      </plugin>
     </gui>
 
-    <physics name="1ms" type="ode">
+    <physics name="1ms" type="dart">
       <max_step_size>0.001</max_step_size>
-      <real_time_factor>0</real_time_factor>
+      <real_time_factor>1.0</real_time_factor>
+      <dart>
+        <solver>
+          <slover_type>dartzig</slover_type>
+        </solver>
+        <collision_detector>fcl</collision_detector>
+      </dart>
     </physics>
 
     <scene>
@@ -156,7 +147,6 @@
       <background>0 0 0 1.0</background>
       <grid>false</grid>
       <origin_visual>false</origin_visual>
-      <!-- modified (shadows) to reduce computation effort, default : true -->
       <shadows>false</shadows>
     </scene>
 
@@ -189,7 +179,7 @@
         <collision name="section_01_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_01.stl</uri>
+              <uri>meshes/collision/Edgar_Section_01_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -211,7 +201,7 @@
         <collision name="section_02_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_02.stl</uri>
+              <uri>meshes/collision/Edgar_Section_02_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -233,7 +223,7 @@
         <collision name="section_03_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_03.stl</uri>
+              <uri>meshes/collision/Edgar_Section_03_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -255,7 +245,7 @@
         <collision name="section_04_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_04.stl</uri>
+              <uri>meshes/collision/Edgar_Section_04_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -274,10 +264,11 @@
           </plugin>
         </visual>
 
+        <!--
         <collision name="section_05_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_05.stl</uri>
+              <uri>meshes/collision/Edgar_Section_05_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -299,7 +290,7 @@
         <collision name="section_06_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_06.stl</uri>
+              <uri>meshes/collision/Edgar_Section_06_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -321,7 +312,7 @@
         <collision name="section_07_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_07.stl</uri>
+              <uri>meshes/collision/Edgar_Section_07_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -343,7 +334,7 @@
         <collision name="section_08_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_08.stl</uri>
+              <uri>meshes/collision/Edgar_Section_08_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -365,7 +356,7 @@
         <collision name="section_09_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_09.stl</uri>
+              <uri>meshes/collision/Edgar_Section_09_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -387,7 +378,7 @@
         <collision name="section_10_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_10.stl</uri>
+              <uri>meshes/collision/Edgar_Section_10_simplified.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -405,31 +396,14 @@
             <temperature>285.0</temperature>
           </plugin>
         </visual>
+        -->
       </link>
     </model>
-
-    <include>
-      <pose>3.40 15.40 0.69 0 0 -0.07</pose>
-      <name>rescue_randy_1</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
-    </include>
-
-    <include>
-      <pose>8 15.40 0.69 0 0 -0.07</pose>
-      <name>rescue_randy_2</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
-    </include>
 
     <include>
       <pose>-38.84 5.73 0.67 0.03 0.00 -1.29</pose>
       <name>rescue_randy_3</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
-    </include>
-
-    <include>
-      <pose>28.25 6.32 0.64 -0.15 0.06 -2.55</pose>
-      <name>rescue_randy_sitting_1</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
     </include>
 
     <include>
@@ -439,9 +413,8 @@
     </include>
 
     <model name="spot">
-      <pose>-46.48 2.05 1.05 -0.01 -0.03 0.68</pose>
-      <!-- <pose>0.87 9.99 0.95 -0.05 -0.05 0.71</pose> -->
-      <!-- <pose>-14.95 5.17 1.2 0.07 0.01 -0.02</pose> -->
+      <!-- TODO: add a location from the beginning of the entrance of the mine -->
+      <pose>-46.48 2.05 1.05 -0.01 -0.03 0.68</pose> <!-- section 02 -->
       <include merge="true">
         <uri>package://spot_description/models/spot</uri>
       </include>
