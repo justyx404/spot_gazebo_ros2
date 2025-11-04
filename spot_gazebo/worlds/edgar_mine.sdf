@@ -179,7 +179,7 @@
         <collision name="section_01_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_01_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_01.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -201,7 +201,7 @@
         <collision name="section_02_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_02_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_02.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -223,7 +223,7 @@
         <collision name="section_03_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_03_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_03.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -245,7 +245,7 @@
         <collision name="section_04_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_04_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_04.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -264,11 +264,10 @@
           </plugin>
         </visual>
 
-        <!--
         <collision name="section_05_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_05_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_05.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -290,7 +289,7 @@
         <collision name="section_06_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_06_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_06.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -312,7 +311,7 @@
         <collision name="section_07_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_07_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_07.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -334,7 +333,7 @@
         <collision name="section_08_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_08_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_08.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -356,7 +355,7 @@
         <collision name="section_09_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_09_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_09.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -378,7 +377,7 @@
         <collision name="section_10_collision">
           <geometry>
             <mesh>
-              <uri>meshes/collision/Edgar_Section_10_simplified.stl</uri>
+              <uri>meshes/collision/Edgar_Section_10.stl</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -396,7 +395,6 @@
             <temperature>285.0</temperature>
           </plugin>
         </visual>
-        -->
       </link>
     </model>
 
