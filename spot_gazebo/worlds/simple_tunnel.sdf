@@ -151,9 +151,15 @@
       </plugin>
     </gui>
 
-    <physics name="1ms" type="ode">
+    <physics name="1ms" type="dart">
       <max_step_size>0.001</max_step_size>
-      <real_time_factor>0</real_time_factor>
+      <real_time_factor>1.0</real_time_factor>
+      <dart>
+        <solver>
+          <slover_type>dartzig</slover_type>
+        </solver>
+        <collision_detector>fcl</collision_detector>
+      </dart>
     </physics>
 
     <scene>
@@ -161,8 +167,6 @@
       <background>0 0 0 1.0</background>
       <grid>false</grid>
       <origin_visual>false</origin_visual>
-      <!-- modified (shadows) to reduce computation effort, default : true -->
-      <shadows>false</shadows>
     </scene>
 
     <atmosphere type="adiabatic">
@@ -409,6 +413,12 @@
       <name>phone_1</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Samsung J8 Black</uri>
       <pose>77.800000 -40.000000 0.004000 -1.570796 0 0.785398</pose>
+    </include>
+
+    <include>
+      <name>barrel</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
+      <pose>40.0 3.0 0.0 0.0 0.0 1.5</pose>
     </include>
 
     <model name="spot">
