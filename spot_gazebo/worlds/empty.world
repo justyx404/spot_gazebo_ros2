@@ -226,6 +226,10 @@
     </model>
 
     <!-- TODO: Add the custom plugin to reset the joint positions-->
+    <plugin
+      filename="FullSystem"
+      name="spot_gazebo::FullSystem">
+    </plugin>
 
   </world>
 </sdf>

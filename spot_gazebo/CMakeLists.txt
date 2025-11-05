@@ -10,6 +10,33 @@ project(spot_gazebo)
 find_package(ament_cmake REQUIRED)
 find_package(spot_description REQUIRED)
 
+find_package(ignition-cmake2 REQUIRED)
+find_package(ignition-plugin1 REQUIRED COMPONENTS register)
+set(GZ_PLUGIN_VER ${ignition-plugin1_VERSION_MAJOR})
+find_package(ignition-common4 REQUIRED COMPONENTS profiler)
+set(GZ_COMMON_VER ${ignition-common4_VERSION_MAJOR})
+find_package(ignition-gazebo6 REQUIRED)
+set(GZ_SIM_VER ${ignition-gazebo6_VERSION_MAJOR})
+
+add_library(FullSystem
+  SHARED
+  src/FullSystem.cc
+)
+
+target_include_directories(
+  FullSystem PRIVATE include
+)
+
+target_link_libraries(FullSystem PRIVATE
+  ignition-gazebo${GZ_SIM_VER}::ignition-gazebo${GZ_SIM_VER})
+
+# Following 'install' directive ensures that the compiled libraries
+# of the 'BasicSystem' and 'FullSystem' targets will be copied
+# to the subfolder 'lib/ros_gz_example_gazebo' of the install directory.
+install(
+  TARGETS FullSystem
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 # Following 'install' directive ensures that the 'worlds' subfolder
 # will be copied to the 'share/spot_gazebo/worlds'
