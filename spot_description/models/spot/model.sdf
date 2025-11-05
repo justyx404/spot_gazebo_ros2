@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<sdf version="1.7">
+<sdf version="1.8">
   <model name="spot">
     <link name="base_link">
       <inertial>
@@ -206,7 +206,7 @@
           </clip>
         </camera>
         <always_on>1</always_on>
-        <update_rate>10</update_rate>
+        <update_rate>30</update_rate>
         <visualize>true</visualize>
         <topic>model/spot/thermal_camera</topic>
       </sensor>
@@ -1886,12 +1886,15 @@
       filename="ignition-gazebo-joint-state-publisher-system"
       name="ignition::gazebo::systems::JointStatePublisher">
       <topic>model/spot/joint_state</topic>
+      <update_rate>200</update_rate>
     </plugin>
 
     <plugin
       filename="ignition-gazebo-odometry-publisher-system"
       name="ignition::gazebo::systems::OdometryPublisher">
-      <odom_frame>odom</odom_frame>
+      <odom_publish_frequency>10</odom_publish_frequency>
+      <odom_topic>/model/spot/odometry</odom_topic>
+      <odom_frame>/odom_spot</odom_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <dimensions>3</dimensions>
     </plugin>

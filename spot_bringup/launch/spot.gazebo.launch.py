@@ -43,8 +43,6 @@ def generate_launch_description():
                         'worlds',
                         world_file
                     ]),
-                    ' --render-engine ogre2'  # doesn't seem to improve simulation speed
-                    # ' -v 4'   # show debug messages for gazebo
                 ],
             }.items(),
     )
@@ -110,7 +108,9 @@ def generate_launch_description():
             joints_param,
             gait_param
         ],
-        remappings=[("/cmd_vel/smooth", "/cmd_vel")],
+        remappings=[
+            ("/cmd_vel/smooth", "/cmd_vel"),
+        ],
     )
 
     # Visualize in RViz

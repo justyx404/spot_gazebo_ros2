@@ -15,8 +15,13 @@
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "ignition.msgs.Odometry"
   direction: GZ_TO_ROS
+- ros_topic_name: "/tf"
+  gz_topic_name: "/model/spot/pose"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "ignition.msgs.Pose_V"
+  direction: GZ_TO_ROS
 # Sensors
-- ros_topic_name: "/spot/scan"
+- ros_topic_name: "/spot/lidar/scan"
   gz_topic_name: "/model/spot/lidar"
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "ignition.msgs.LaserScan"
