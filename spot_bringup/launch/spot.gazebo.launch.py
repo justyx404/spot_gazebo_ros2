@@ -80,38 +80,38 @@ def generate_launch_description():
     )
 
     # Controller
-    config_path = get_package_share_directory("champ_config")
-    links_config = PathJoinSubstitution([config_path, 'config', 'links', 'links.yaml'])
-    links_param = ParameterFile(param_file=links_config, allow_substs=True)
+    # config_path = get_package_share_directory("champ_config")
+    # links_config = PathJoinSubstitution([config_path, 'config', 'links', 'links.yaml'])
+    # links_param = ParameterFile(param_file=links_config, allow_substs=True)
 
-    joints_config = PathJoinSubstitution([config_path, 'config', 'joints', 'joints.yaml'])
-    joints_param = ParameterFile(param_file=joints_config, allow_substs=True) 
+    # joints_config = PathJoinSubstitution([config_path, 'config', 'joints', 'joints.yaml'])
+    # joints_param = ParameterFile(param_file=joints_config, allow_substs=True) 
 
-    gait_config = PathJoinSubstitution([config_path, 'config', 'gait', 'gait.yaml'])
-    gait_param = ParameterFile(param_file=gait_config, allow_substs=True) 
+    # gait_config = PathJoinSubstitution([config_path, 'config', 'gait', 'gait.yaml'])
+    # gait_param = ParameterFile(param_file=gait_config, allow_substs=True) 
 
-    urdf_file = os.path.join(pkg_spot_description, 'models', 'spot', 'model.urdf')
+    # urdf_file = os.path.join(pkg_spot_description, 'models', 'spot', 'model.urdf')
 
-    quadruped_controller_node = Node(
-        package="champ_base",
-        executable="quadruped_controller_node",
-        output="screen",
-        parameters=[
-            {"use_sim_time": True},
-            {"gazebo": True},
-            {"publish_joint_states": False},
-            {"publish_foot_contacts": False},
-            {"publish_joint_control": True},
-            {"joint_controller_topic": "/spot/joint_trajectory"},
-            {"urdf": urdf_file},
-            links_param,
-            joints_param,
-            gait_param
-        ],
-        remappings=[
-            ("/cmd_vel/smooth", "/cmd_vel"),
-        ],
-    )
+    # quadruped_controller = Node(
+    #     package="champ_base",
+    #     executable="quadruped_controller_node",
+    #     output="screen",
+    #     parameters=[
+    #         {"use_sim_time": True},
+    #         {"gazebo": True},
+    #         {"publish_joint_states": False},
+    #         {"publish_foot_contacts": False},
+    #         {"publish_joint_control": True},
+    #         {"joint_controller_topic": "/spot/joint_trajectory"},
+    #         {"urdf": urdf_file},
+    #         links_param,
+    #         joints_param,
+    #         gait_param
+    #     ],
+    #     remappings=[
+    #         ("/cmd_vel/smooth", "/cmd_vel"),
+    #     ],
+    # )
 
     # Visualize in RViz
     rviz = Node(
@@ -133,6 +133,6 @@ def generate_launch_description():
         gz_sim,
         bridge,
         robot_state_publisher,
-        quadruped_controller_node,
+        #quadruped_controller,
         rviz
     ])

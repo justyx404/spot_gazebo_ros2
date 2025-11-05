@@ -910,8 +910,8 @@
     </link>
 
     <joint name="front_left_hip_x" type="revolute">
-      <child>front_left_hip</child>
       <parent>base_link</parent>
+      <child>front_left_hip</child>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
@@ -926,6 +926,7 @@
         </dynamics>
       </axis>
     </joint>
+
     <link name="front_left_upper_leg">
       <pose>0.29785 0.165945 0 0 -0 0</pose>
       <inertial>
@@ -1897,72 +1898,6 @@
       <odom_frame>/odom_spot</odom_frame>
       <robot_base_frame>base_link</robot_base_frame>
       <dimensions>3</dimensions>
-    </plugin>
-
-    <plugin
-      filename="ignition-gazebo-joint-trajectory-controller-system"
-      name="ignition::gazebo::systems::JointTrajectoryController">
-      <topic>model/spot/joint_trajectory</topic>
-
-      <joint_name>front_left_hip_x</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>front_left_hip_y</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>front_left_knee</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>front_right_hip_x</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>front_right_hip_y</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>front_right_knee</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>rear_left_hip_x</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>rear_left_hip_y</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>rear_left_knee</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>rear_right_hip_x</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>rear_right_hip_y</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
-
-      <joint_name>rear_right_knee</joint_name>
-      <position_p_gain>500</position_p_gain>
-      <position_i_gain>1</position_i_gain>
-      <position_d_gain>20</position_d_gain>
     </plugin>
 
   </model>
