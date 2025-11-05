@@ -43,6 +43,7 @@ def generate_launch_description():
                         'worlds',
                         world_file
                     ]),
+                    ' -v 4'
                 ],
             }.items(),
     )
