@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
-  <world name="default">
+  <world name="empty">
     <plugin
       filename="gz-sim-physics-system"
       name="gz::sim::systems::Physics">
@@ -169,38 +169,6 @@
               <size>100 100</size>
             </plane>
           </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>0.7</mu>
-                <mu2>0.7</mu2>
-                <!-- 
-                <slip1>0.2</slip1>
-                <slip2>0.2</slip2>
-                <fdir1>0 0 0</fdir1>
-                -->
-              </ode>
-              <torsional>
-                <coefficient>1.0</coefficient>
-                <use_patch_radius>true</use_patch_radius>
-                <patch_radius>0.1</patch_radius>
-                <surface_radius>0.1</surface_radius>
-                <ode>
-                  <slip>0.0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <contact>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-            </contact>
-          </surface>
         </collision>
         <visual name="visual">
           <geometry>
