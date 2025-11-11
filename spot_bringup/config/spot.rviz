@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /TF1/Frames1
-        - /Odometry1/Shape1
       Splitter Ratio: 0.5
     Tree Height: 402
   - Class: rviz_common/Selection
@@ -261,8 +260,6 @@ Visualization Manager:
           Value: false
         lidar_link:
           Value: true
-        odom_spot:
-          Value: true
         rear_left_ee:
           Value: false
         rear_left_hip:
@@ -333,8 +330,6 @@ Visualization Manager:
               rear_right_lower_leg:
                 rear_right_ee:
                   {}
-        odom_spot:
-          {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -384,45 +379,6 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /spot/camera/thermal_camera
-      Value: true
-    - Angle Tolerance: 0.10000000149011612
-      Class: rviz_default_plugins/Odometry
-      Covariance:
-        Orientation:
-          Alpha: 0.5
-          Color: 255; 255; 127
-          Color Style: Unique
-          Frame: Local
-          Offset: 1
-          Scale: 1
-          Value: true
-        Position:
-          Alpha: 0.30000001192092896
-          Color: 204; 51; 204
-          Scale: 1
-          Value: true
-        Value: true
-      Enabled: true
-      Keep: 100
-      Name: Odometry
-      Position Tolerance: 0.10000000149011612
-      Shape:
-        Alpha: 1
-        Axes Length: 1
-        Axes Radius: 0.10000000149011612
-        Color: 85; 170; 255
-        Head Length: 0.30000001192092896
-        Head Radius: 0.10000000149011612
-        Shaft Length: 0.25
-        Shaft Radius: 0.05000000074505806
-        Value: Arrow
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /spot/odometry
       Value: true
   Enabled: true
   Global Options:

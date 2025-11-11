@@ -147,8 +147,6 @@
         <topic_picker>false</topic_picker>
       </plugin>
 
-      <plugin filename="VisualizeLidar" name="Visualize Lidar">
-      </plugin>
     </gui>
 
     <physics name="1ms" type="dart">
@@ -418,7 +416,7 @@
     <include>
       <name>barrel</name>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
-      <pose>40.0 3.0 0.0 0.0 0.0 1.5</pose>
+      <pose>40.0 15.0 0.0 0.0 0.0 1.5</pose>
     </include>
 
     <model name="spot">
