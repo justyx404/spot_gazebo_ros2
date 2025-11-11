@@ -19,9 +19,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='yg5d6',
-    maintainer_email='ygao@missouri.edu',
-    description='Config files for using the ROS 2 Nav2 stack',
+    maintainer='Yixiang Gao',
+    maintainer_email='ygao@mst.edu',
+    description='Config files for using the navigation stack',
     license='MIT',
     tests_require=['pytest'],
     entry_points={

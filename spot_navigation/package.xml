@@ -3,11 +3,9 @@
 <package format="3">
   <name>spot_navigation</name>
   <version>0.0.0</version>
-  <description>Config files for using the ROS 2 Nav2 stack</description>
-  <maintainer email="ygao@missouri.edu">yg5d6</maintainer>
+  <description>Config and launch files for using the navigation stack</description>
+  <maintainer email="ygao@mst.edu">yg5d6</maintainer>
   <license>MIT</license>
-
-  <depend>slam_toolbox</depend>
 
   <export>
     <build_type>ament_python</build_type>
