@@ -28,8 +28,8 @@ def generate_launch_description():
         executable='rviz2',
         arguments=['-d', PathJoinSubstitution([
             spot_nav_pkg, 
-            'config', 
-            'dlo_localization.rviz'
+            'rviz', 
+            'dlo.rviz'
         ])],
         condition=IfCondition(LaunchConfiguration('rviz')),
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
