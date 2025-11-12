@@ -152,14 +152,6 @@
     <physics name="1ms" type="ode">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
-      <!--
-      <dart>
-        <solver>
-          <slover_type>dartzig</slover_type>
-        </solver>
-        <collision_detector>fcl</collision_detector>
-      </dart>
-      -->
     </physics>
 
     <scene>
