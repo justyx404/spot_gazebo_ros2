@@ -1,27 +1,11 @@
 /**:
-    ros__parameters:
-      registration_method: "NDT_OMP"
-      score_threshold: 2.0
-      ndt_resolution: 1.0
-      ndt_step_size: 0.1
-      ndt_num_threads: 4
-      ndt_max_iterations: 35
-      transform_epsilon: 0.01
-      voxel_leaf_size: 0.2
-      scan_period: 0.1
-      use_pcd_map: false
-      map_path: "src/spot_ros2_gazebo/spot_navigation/maps/simple_tunnel.pcd"
-      set_initial_pose: true
-      initial_pose_x: 0.0
-      initial_pose_y: 0.0
-      initial_pose_z: 0.0
-      initial_pose_qx: 0.0
-      initial_pose_qy: 0.0
-      initial_pose_qz: 0.0
-      initial_pose_qw: 0.0
-      use_odom: true
-      use_imu: false
-      global_frame_id: map
-      odom_frame_id: odom
-      base_frame_id: base_link
-      enable_debug: true
+  ros__parameters:
+      # localization node
+      dlo/localizationNode/initial_pose_use: true
+      dlo/localizationNode/initial_position/x: 0.0
+      dlo/localizationNode/initial_position/y: 0.0
+      dlo/localizationNode/initial_position/z: 0.0
+      dlo/localizationNode/initial_orientation/w: 1.0
+      dlo/localizationNode/initial_orientation/x: 0.0
+      dlo/localizationNode/initial_orientation/y: 0.0
+      dlo/localizationNode/initial_orientation/z: 0.0
