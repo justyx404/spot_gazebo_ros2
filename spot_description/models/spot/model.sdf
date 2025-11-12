@@ -1323,17 +1323,6 @@
       </physics>
     </joint>
     <link name="imu">
-      <inertial>
-        <mass>1e-05</mass>
-        <inertia>
-          <ixx>0.001</ixx>
-          <ixy>1e-06</ixy>
-          <ixz>1e-06</ixz>
-          <iyy>0.001</iyy>
-          <iyz>1e-06</iyz>
-          <izz>0.001</izz>
-        </inertia>
-      </inertial>
       <sensor name="imu" type="imu">
         <always_on>1</always_on>
         <update_rate>100</update_rate>
