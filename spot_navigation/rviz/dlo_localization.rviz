@@ -5,10 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1
-        - /TF1/Status1
         - /TF1/Tree1
-        - /TF1/Tree1/map1
+        - /map1/Topic1
       Splitter Ratio: 0.5
     Tree Height: 789
   - Class: rviz_common/Selection
@@ -28,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: key_frames
+    SyncSource: lidar
 Visualization Manager:
   Class: ""
   Displays:
@@ -54,74 +52,74 @@ Visualization Manager:
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
         base_link:
           Value: true
         battery:
-          Value: true
+          Value: false
         body:
-          Value: true
+          Value: false
         camera_back:
-          Value: true
+          Value: false
         camera_base_link:
-          Value: true
+          Value: false
         camera_frontleft:
-          Value: true
+          Value: false
         camera_frontright:
-          Value: true
+          Value: false
         camera_left:
-          Value: true
+          Value: false
         camera_right:
-          Value: true
+          Value: false
         front_left_ee:
-          Value: true
+          Value: false
         front_left_hip:
-          Value: true
+          Value: false
         front_left_lower_leg:
-          Value: true
+          Value: false
         front_left_upper_leg:
-          Value: true
+          Value: false
         front_rail:
-          Value: true
+          Value: false
         front_right_ee:
-          Value: true
+          Value: false
         front_right_hip:
-          Value: true
+          Value: false
         front_right_lower_leg:
-          Value: true
+          Value: false
         front_right_upper_leg:
-          Value: true
+          Value: false
         imu:
-          Value: true
+          Value: false
         lidar_base_link:
-          Value: true
+          Value: false
         lidar_link:
-          Value: true
+          Value: false
         map:
           Value: true
         odom_lidar:
           Value: true
         rear_left_ee:
-          Value: true
+          Value: false
         rear_left_hip:
-          Value: true
+          Value: false
         rear_left_lower_leg:
-          Value: true
+          Value: false
         rear_left_upper_leg:
-          Value: true
+          Value: false
         rear_rail:
-          Value: true
+          Value: false
         rear_right_ee:
-          Value: true
+          Value: false
         rear_right_hip:
-          Value: true
+          Value: false
         rear_right_lower_leg:
-          Value: true
+          Value: false
         rear_right_upper_leg:
-          Value: true
+          Value: false
         thermal_camera_link:
-          Value: true
-      Marker Scale: 1
+          Value: false
+      Marker Scale: 5
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -129,20 +127,63 @@ Visualization Manager:
       Tree:
         map:
           odom_lidar:
-            {}
+            base_link:
+              battery:
+                {}
+              body:
+                front_rail:
+                  lidar_base_link:
+                    lidar_link:
+                      {}
+                rear_rail:
+                  camera_base_link:
+                    thermal_camera_link:
+                      {}
+              camera_back:
+                {}
+              camera_frontleft:
+                {}
+              camera_frontright:
+                {}
+              camera_left:
+                {}
+              camera_right:
+                {}
+              front_left_hip:
+                front_left_upper_leg:
+                  front_left_lower_leg:
+                    front_left_ee:
+                      {}
+              front_right_hip:
+                front_right_upper_leg:
+                  front_right_lower_leg:
+                    front_right_ee:
+                      {}
+              imu:
+                {}
+              rear_left_hip:
+                rear_left_upper_leg:
+                  rear_left_lower_leg:
+                    rear_left_ee:
+                      {}
+              rear_right_hip:
+                rear_right_upper_leg:
+                  rear_right_lower_leg:
+                    rear_right_ee:
+                      {}
       Update Interval: 0
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
+        Max Value: 3.629733085632324
+        Min Value: -1.3079906702041626
         Value: true
       Axis: Z
       Channel Name: intensity
       Class: rviz_default_plugins/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color Transformer: AxisColor
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
@@ -152,7 +193,7 @@ Visualization Manager:
       Min Intensity: 0
       Name: map
       Position Transformer: XYZ
-      Selectable: true
+      Selectable: false
       Size (Pixels): 3
       Size (m): 0.05000000074505806
       Style: Flat Squares
@@ -162,7 +203,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /dlo/localization_node/global_map
+        Value: /dlo/localization_node/global_map_filtered
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -184,45 +225,11 @@ Visualization Manager:
       Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: key_frames
-      Position Transformer: XYZ
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.15000000596046448
-      Style: Flat Squares
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /dlo/odom_node/pointcloud/keyframe
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz_default_plugins/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: ""
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 4096
-      Min Color: 0; 0; 0
-      Min Intensity: 0
       Name: lidar
-      Position Transformer: ""
-      Selectable: true
+      Position Transformer: XYZ
+      Selectable: false
       Size (Pixels): 3
-      Size (m): 0.009999999776482582
+      Size (m): 0.05000000074505806
       Style: Flat Squares
       Topic:
         Depth: 5
@@ -233,6 +240,45 @@ Visualization Manager:
         Value: /spot/lidar/points
       Use Fixed Frame: true
       Use rainbow: true
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz_default_plugins/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 100
+      Name: odometry
+      Position Tolerance: 0.10000000149011612
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 1
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /dlo/odom_node/odom
       Value: true
   Enabled: true
   Global Options:
@@ -280,25 +326,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 37.3752555847168
+      Distance: 66.19624328613281
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 9.292755126953125
+        Y: -11.13131332397461
+        Z: 3.563567876815796
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.0397969484329224
+      Pitch: 1.4197965860366821
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.8704121112823486
+      Yaw: 3.215409994125366
     Saved: ~
 Window Geometry:
   Displays:
