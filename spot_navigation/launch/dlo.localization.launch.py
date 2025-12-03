@@ -59,6 +59,16 @@ def generate_launch_description():
     dlo_yaml_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'dlo.yaml'])
     localization_yaml_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'localization.yaml'])
 
+    dlo_map_server_node = Node(
+        name = 'dlo_map_server',
+        package = 'direct_lidar_odometry',
+        executable = 'dlo_map_server_node',
+        output = 'screen',
+        parameters = [
+            {'map_path': PathJoinSubstitution([spot_nav_pkg, 'maps', LaunchConfiguration('map_path')])},
+        ],
+    )
+
     dlo_localization_node = Node(
         name = 'dlo_localization',
         package = 'direct_lidar_odometry',
@@ -94,5 +104,6 @@ def generate_launch_description():
         rviz,
         dlo_launch,
         dlo_localization_node,
+        dlo_map_server_node,
         shutdown_on_localization_exit
     ])
