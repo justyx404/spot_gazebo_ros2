@@ -14,7 +14,7 @@ def generate_launch_description():
     # Declare a launch argument for the lidar topic, in case you want to change it easily
     lidar_topic_arg = DeclareLaunchArgument(
         'lidar_topic',
-        default_value='/spot/lidar/points',
+        default_value='/obstacle_cloud',
         description='Topic for the input lidar point cloud'
     )
 
