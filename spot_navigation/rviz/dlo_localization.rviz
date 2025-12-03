@@ -8,6 +8,7 @@ Panels:
         - /TF1/Tree1
         - /map1/Topic1
         - /map1/Autocompute Value Bounds1
+        - /odometry1/Shape1
       Splitter Ratio: 0.5
     Tree Height: 739
   - Class: rviz_common/Selection
@@ -27,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: lidar
+    SyncSource: obstacles
 Visualization Manager:
   Class: ""
   Displays:
@@ -120,7 +121,7 @@ Visualization Manager:
           Value: false
         thermal_camera_link:
           Value: false
-      Marker Scale: 5
+      Marker Scale: 2.5
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -175,6 +176,173 @@ Visualization Manager:
       Update Interval: 0
       Value: true
     - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        battery:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_back:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_frontleft:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_frontright:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_left:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_left_ee:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_left_hip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_left_lower_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_left_upper_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_rail:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_right_ee:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_right_hip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_right_lower_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_right_upper_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        lidar_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        lidar_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rear_left_ee:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rear_left_hip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_lower_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_upper_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_rail:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rear_right_ee:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rear_right_hip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_right_lower_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_right_upper_leg:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thermal_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
         Max Value: 3.629733085632324
@@ -204,7 +372,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /global_map
+        Value: /global_cloud
       Use Fixed Frame: true
       Use rainbow: false
       Value: true
@@ -217,16 +385,16 @@ Visualization Manager:
       Axis: Z
       Channel Name: intensity
       Class: rviz_default_plugins/PointCloud2
-      Color: 255; 255; 255
+      Color: 85; 255; 0
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 0
       Min Color: 0; 0; 0
       Min Intensity: 0
-      Name: lidar
+      Name: obstacles
       Position Transformer: XYZ
       Selectable: false
       Size (Pixels): 3
@@ -238,10 +406,10 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /spot/lidar/points
+        Value: /obstacle_cloud
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry
       Covariance:
@@ -265,12 +433,12 @@ Visualization Manager:
       Position Tolerance: 0.10000000149011612
       Shape:
         Alpha: 1
-        Axes Length: 1
+        Axes Length: 0.5
         Axes Radius: 0.10000000149011612
-        Color: 255; 25; 0
+        Color: 85; 85; 255
         Head Length: 0.30000001192092896
         Head Radius: 0.10000000149011612
-        Shaft Length: 1
+        Shaft Length: 0.800000011920929
         Shaft Radius: 0.05000000074505806
         Value: Arrow
       Topic:
@@ -327,25 +495,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 67.81192016601562
+      Distance: 40.307106018066406
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 11.869622230529785
-        Y: -3.650737762451172
-        Z: -3.605483293533325
+        X: 12.010716438293457
+        Y: -1.611983299255371
+        Z: -4.0831756591796875
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4997978210449219
+      Pitch: 0.844797670841217
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.3704192638397217
+      Yaw: 3.1504108905792236
     Saved: ~
 Window Geometry:
   Displays:
