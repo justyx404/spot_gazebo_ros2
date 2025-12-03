@@ -19,8 +19,8 @@ def generate_launch_description():
     )
 
     local_planner_node = Node(
-        package='local_planner_motion_primitives',
-        executable='local_planner',
+        package='mpl_planner',
+        executable='mpl_planner',
         name='local_planner', # Assign a name to the node
         output='screen',
         parameters=[
@@ -32,9 +32,9 @@ def generate_launch_description():
     )
 
     path_follower_node = Node(
-        package='local_planner_motion_primitives',
+        package='mpl_planner',
         executable='pure_pursuit_controller',
-        name='pure_pursuit_controller',
+        name='nav_controller',
         output='screen',
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')} # Pass the use_sim_time argument

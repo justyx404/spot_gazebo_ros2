@@ -76,6 +76,7 @@ def generate_launch_description():
         ],
         remappings = [
             ('pointcloud', pointcloud_topic_cfg),
+            ('odom'      , 'dlo/odom_node/odom'),
         ]
     )
 
@@ -93,8 +94,6 @@ def generate_launch_description():
             }
         ],
         remappings= [
-            ('global_map'         , 'dlo/localization_node/global_map'),
-            ('global_map_filtered', 'dlo/localization_node/global_map_filtered'),
             ('pointcloud'         , 'dlo/odom_node/pointcloud/keyframe'),
             ('odom'               , 'dlo/odom_node/odom'),
         ]
