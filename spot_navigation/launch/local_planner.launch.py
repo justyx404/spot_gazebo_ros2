@@ -1,5 +1,6 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, RegisterEventHandler, ExecuteProcess
+from launch.event_handlers import OnShutdown
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
@@ -34,16 +35,30 @@ def generate_launch_description():
     path_follower_node = Node(
         package='mpl_planner',
         executable='pure_pursuit_controller',
-        name='nav_controller',
+        name='pure_pursuit_controller',
         output='screen',
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')} # Pass the use_sim_time argument
         ],
     )
 
+    # Command to publish a zero-velocity message on shutdown
+    stop_command = ExecuteProcess(
+        cmd=['ros2', 'topic', 'pub', '--once', '/cmd_vel', 'geometry_msgs/msg/Twist', '"{linear: {x: 0.0}, angular: {z: 0.0}}"'],
+        shell=True
+    )
+
+    # Register the stop command to run on shutdown
+    shutdown_handler = RegisterEventHandler(
+        event_handler=OnShutdown(
+            on_shutdown=[stop_command],
+        )
+    )
+
     return LaunchDescription([
         use_sim_time_arg,
         lidar_topic_arg,
         local_planner_node,
-        path_follower_node
+        path_follower_node,
+        shutdown_handler
     ])
