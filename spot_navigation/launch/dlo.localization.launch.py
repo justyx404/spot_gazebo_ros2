@@ -29,13 +29,6 @@ def generate_launch_description():
         description='Filename of the map file (e.g., simple_tunnel.pcd).'
     )
 
-    pointcloud_topic_cfg = LaunchConfiguration('pointcloud_topic', default='/spot/lidar/points')
-    declare_pointcloud_topic_arg = DeclareLaunchArgument(
-        'pointcloud_topic',
-        default_value = pointcloud_topic_cfg,
-        description = 'Input point cloud topic name'
-    )
-
     # Visualize in RViz
     rviz = Node(
         package='rviz2',
@@ -65,20 +58,6 @@ def generate_launch_description():
 
     dlo_yaml_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'dlo.yaml'])
     localization_yaml_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'localization.yaml'])
-
-    dlo_map_server_node = Node(
-        name = 'dlo_map_server',
-        package = 'direct_lidar_odometry',
-        executable = 'dlo_map_server_node',
-        output = 'screen',
-        parameters = [
-            {'map_path': PathJoinSubstitution([spot_nav_pkg, 'maps', LaunchConfiguration('map_path')])},
-        ],
-        remappings = [
-            ('pointcloud', pointcloud_topic_cfg),
-            ('odom'      , 'dlo/odom_node/odom'),
-        ]
-    )
 
     dlo_localization_node = Node(
         name = 'dlo_localization',
@@ -113,7 +92,5 @@ def generate_launch_description():
         rviz,
         dlo_launch,
         dlo_localization_node,
-        declare_pointcloud_topic_arg,
-        dlo_map_server_node,
         shutdown_on_localization_exit
     ])
