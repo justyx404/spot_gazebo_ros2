@@ -408,10 +408,17 @@
     </include>
 
     <include>
-      <name>barrel</name>
+      <name>barrel_1</name>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
       <pose>40.0 15.0 0.0 0.0 0.0 1.5</pose>
     </include>
+
+    <include>
+      <name>barrel_2</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
+      <pose>40.0 5.0 0.0 0.0 0.0 1.5</pose>
+    </include>
+
 
     <model name="spot">
       <pose>40.0 0.0 0.7 0.0 0.0 1.5</pose>
