@@ -35,11 +35,11 @@ def generate_launch_description():
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
 
-    pointcloud_topic_cfg = LaunchConfiguration('pointcloud_topic', default='/spot/lidar/points')
+    pointcloud_topic_cfg = LaunchConfiguration('pointcloud_topic', default='/spot/lidar/points_base')
     declare_pointcloud_topic_arg = DeclareLaunchArgument(
     	'pointcloud_topic',
     	default_value = pointcloud_topic_cfg,
-    	description = 'Input point cloud topic name'
+    	description = 'Input point cloud topic name (use points_base for transformed cloud)'
     )
 
     imu_topic_cfg = LaunchConfiguration('imu_topic', default = '/spot/imu')

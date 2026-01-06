@@ -118,11 +118,34 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         arguments=['-d', PathJoinSubstitution([
-            pkg_spot_bringup, 
-            'config', 
+            pkg_spot_bringup,
+            'config',
             LaunchConfiguration('rviz_config_file')
         ])],
         condition=IfCondition(LaunchConfiguration('rviz')),
+        parameters=[{'use_sim_time': True}]
+    )
+
+    # Transform point cloud from lidar_link to base_link for DLO
+    pointcloud_transform = Node(
+        package='spot_bringup',
+        executable='pointcloud_transform',
+        name='pointcloud_transform',
+        output='screen',
+        parameters=[{
+            'use_sim_time': True,
+            'target_frame': 'base_link',
+            'input_topic': '/spot/lidar/points',
+            'output_topic': '/spot/lidar/points_base',
+        }]
+    )
+
+    # Convert thermal camera to RGB for visualization
+    thermal_to_rgb = Node(
+        package='spot_bringup',
+        executable='thermal_to_rgb',
+        name='thermal_to_rgb',
+        output='screen',
         parameters=[{'use_sim_time': True}]
     )
 
@@ -134,5 +157,7 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         quadruped_controller_node,
+        pointcloud_transform,
+        thermal_to_rgb,
         rviz
     ])
