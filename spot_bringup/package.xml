@@ -2,27 +2,30 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>spot_bringup</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>Contains launch files for the spot_gazebo project</description>
   <maintainer email="ygao@missouri.edu">Yixiang Gao</maintainer>
   <license>Apache 2.0</license>
   <author>Yixiang Gao</author>
 
-  <buildtool_depend>ament_python</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>ros_gz</depend>
-  <depend>spot_gazebo</depend>
-  <depend>spot_description</depend>
-  <depend>rclpy</depend>
+  <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
   <depend>tf2_ros</depend>
   <depend>tf2_sensor_msgs</depend>
-  <depend>cv_bridge</depend>
+  <depend>geometry_msgs</depend>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>ros_gz</exec_depend>
+  <exec_depend>spot_gazebo</exec_depend>
+  <exec_depend>spot_description</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
-    <build_type>ament_python</build_type>
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
-
