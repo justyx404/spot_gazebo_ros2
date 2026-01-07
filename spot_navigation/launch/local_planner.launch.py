@@ -12,11 +12,34 @@ def generate_launch_description():
         description='Use simulation (Gazebo) clock if true'
     )
 
-    # Declare a launch argument for the lidar topic, in case you want to change it easily
+    # Declare a launch argument for the lidar topic
+    # Using /spot/lidar/points_base as it is already transformed to base_link
     lidar_topic_arg = DeclareLaunchArgument(
         'lidar_topic',
-        default_value='/obstacle_cloud',
-        description='Topic for the input lidar point cloud'
+        default_value='/spot/lidar/points_base',
+        description='Topic for the input point cloud (converted to base_link)'
+    )
+
+    # Declare a launch argument for the odom topic
+    # Using /dlo/odom_node/odom as specified by the user
+    odom_topic_arg = DeclareLaunchArgument(
+        'odom_topic',
+        default_value='/dlo/odom_node/odom',
+        description='Topic for the robot odometry'
+    )
+
+    map_server_node = Node(
+        package='mpl_planner',
+        executable='mpl_map_server_node',
+        name='mpl_map_server_node',
+        output='screen',
+        parameters=[
+            {'use_sim_time': LaunchConfiguration('use_sim_time')}
+        ],
+        remappings=[
+            ('pointcloud', LaunchConfiguration('lidar_topic')),
+            ('odom', LaunchConfiguration('odom_topic'))
+        ]
     )
 
     local_planner_node = Node(
@@ -27,14 +50,12 @@ def generate_launch_description():
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')} # Pass the use_sim_time argument
         ],
-        remappings=[
-            ('/lidar', LaunchConfiguration('lidar_topic')) # Remap /lidar to the specified topic
-        ]
+        # The node subscribes to /obstacle_cloud by default
     )
 
     path_follower_node = Node(
         package='mpl_planner',
-        executable='pure_pursuit_controller',
+        executable='regulated_pure_pursuit_controller',
         name='pure_pursuit_controller',
         output='screen',
         parameters=[
@@ -44,8 +65,13 @@ def generate_launch_description():
 
     # Command to publish a zero-velocity message on shutdown
     stop_command = ExecuteProcess(
-        cmd=['ros2', 'topic', 'pub', '--once', '/cmd_vel', 'geometry_msgs/msg/Twist', '"{linear: {x: 0.0}, angular: {z: 0.0}}"'],
-        shell=True
+        cmd=[
+            'ros2', 'topic', 'pub', '--once', 
+            '/cmd_vel', 
+            'geometry_msgs/msg/Twist', 
+            '{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
+        ],
+        output='screen'
     )
 
     # Register the stop command to run on shutdown
@@ -58,6 +84,8 @@ def generate_launch_description():
     return LaunchDescription([
         use_sim_time_arg,
         lidar_topic_arg,
+        odom_topic_arg,
+        map_server_node,
         local_planner_node,
         path_follower_node,
         shutdown_handler
