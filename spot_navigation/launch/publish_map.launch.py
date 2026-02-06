@@ -1,10 +1,9 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, RegisterEventHandler, Shutdown, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
-from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
@@ -13,15 +12,15 @@ def generate_launch_description():
 
     rviz_arg = DeclareLaunchArgument(
         'rviz',
-        default_value='true', 
+        default_value='true',
         description='Open RViz.'
     )
 
     use_sim_time_arg = DeclareLaunchArgument(
-		'use_sim_time',
-		default_value='true',
-		description='Use simulation (Gazebo) clock if true'
-	)
+        'use_sim_time',
+        default_value='true',
+        description='Use simulation (Gazebo) clock if true'
+    )
 
     map_path_arg = DeclareLaunchArgument(
         'map_path',
@@ -34,8 +33,8 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         arguments=['-d', PathJoinSubstitution([
-            spot_nav_pkg, 
-            'rviz', 
+            spot_nav_pkg,
+            'rviz',
             'dlo_localization.rviz',
         ])],
         condition=IfCondition(LaunchConfiguration('rviz')),
@@ -56,33 +55,23 @@ def generate_launch_description():
         }.items()
     )
 
-    dlo_yaml_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'dlo.yaml'])
-    localization_yaml_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'localization.yaml'])
+    map_file_path = PathJoinSubstitution([spot_nav_pkg, 'maps', LaunchConfiguration('map_path')])
 
-    dlo_localization_node = Node(
-        name = 'dlo_localization',
-        package = 'direct_lidar_odometry',
-        executable = 'dlo_localization_node',
-        output = 'screen',
-        parameters = [
-            dlo_yaml_path,
-            localization_yaml_path,
-            {
-                'use_sim_time': LaunchConfiguration('use_sim_time'),
-                'dlo/localizationNode/map_path': PathJoinSubstitution([spot_nav_pkg, 'maps', LaunchConfiguration('map_path')])
-            }
-        ],
-        remappings= [
-            ('pointcloud', 'spot/lidar/points_base'),
-            ('odom'      , 'dlo/odom_node/odom'),
-        ]
-	)
-
-    shutdown_on_localization_exit = RegisterEventHandler(
-        OnProcessExit(
-            target_action=dlo_localization_node,
-            on_exit=[Shutdown()]
-        )
+    # Publish Map PCD and Static TF (map -> odom_lidar)
+    # Using custom node in spot_bringup
+    map_publisher_node = Node(
+        package='spot_bringup',
+        executable='map_publisher',
+        name='map_publisher',
+        parameters=[{
+            'map_path': map_file_path,
+            'leaf_size': 0.25,
+            'ransac_threshold': 0.15,
+            'publish_rate': 5.0,
+            'frame_id': 'map',
+            'use_sim_time': LaunchConfiguration('use_sim_time')
+        }],
+        output='screen'
     )
 
     return LaunchDescription([
@@ -91,6 +80,5 @@ def generate_launch_description():
         map_path_arg,
         rviz,
         dlo_launch,
-        dlo_localization_node,
-        shutdown_on_localization_exit
+        map_publisher_node
     ])
