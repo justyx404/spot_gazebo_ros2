@@ -136,7 +136,11 @@ def generate_launch_description():
             'use_sim_time': True,
             'target_frame': 'base_link',
             'input_topic': '/spot/lidar/points',
-            'output_topic': '/spot/lidar/points_base',
+            'output_topic': '/velodyne_points',
+            'scan_rate': 10.0,
+            'num_scan_lines': 16,
+            'vertical_fov_min': -15.0,
+            'vertical_fov_max': 15.0,
         }]
     )
 

@@ -27,17 +27,7 @@ ament_target_dependencies(pointcloud_transform
   geometry_msgs
 )
 
-add_executable(map_publisher src/map_publisher.cpp)
-ament_target_dependencies(map_publisher
-  rclcpp
-  sensor_msgs
-  pcl_conversions
-  tf2_ros
-  geometry_msgs
-)
-target_link_libraries(map_publisher ${PCL_LIBRARIES})
-
-install(TARGETS pointcloud_transform map_publisher
+install(TARGETS pointcloud_transform
   DESTINATION lib/${PROJECT_NAME})
 
 install(PROGRAMS

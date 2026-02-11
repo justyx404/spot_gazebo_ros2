@@ -32,7 +32,7 @@
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "ignition.msgs.PointCloudPacked"
   direction: GZ_TO_ROS
-- ros_topic_name: "/spot/imu"
+- ros_topic_name: "/imu/data" # topic name used on real system
   gz_topic_name: "/model/spot/imu"
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "ignition.msgs.IMU"
