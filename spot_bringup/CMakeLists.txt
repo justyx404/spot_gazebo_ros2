@@ -46,7 +46,7 @@ install(PROGRAMS
   RENAME thermal_to_rgb
 )
 
-install(DIRECTORY launch config resource
+install(DIRECTORY launch config rviz maps
   DESTINATION share/${PROJECT_NAME}
 )
 

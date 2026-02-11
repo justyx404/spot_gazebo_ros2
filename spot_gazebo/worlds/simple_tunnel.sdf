@@ -23,6 +23,11 @@
         name="ignition::gazebo::systems::UserCommands">
     </plugin>
 
+    <plugin
+        filename="ignition-gazebo-log-system"
+        name="ignition::gazebo::systems::LogRecord">
+    </plugin>
+
     <gui fullscreen="0">
       <!-- 3D scene -->
       <plugin filename="MinimalScene" name="3D View">
@@ -306,12 +311,6 @@
     </include>
 
     <include>
-      <name>rescue_randy_1</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
-      <pose>54.000000 42.200000 0.004000 0 0 0.000000</pose>
-    </include>
-
-    <include>
       <name>tile_3</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Tunnel Tile 2</uri>
       <pose>80.000000 40.000000 0.000000 0 0 4.712389</pose>
@@ -342,12 +341,6 @@
     </include>
 
     <include>
-      <name>drill_1</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Black and Decker Cordless Drill</uri>
-      <pose>34.000000 2.000000 0.004000 0 0 0.000000</pose>
-    </include>
-
-    <include>
       <name>tile_8</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Tunnel Tile 5</uri>
       <pose>60.000000 0.000000 0.000000 0 0 1.570796</pose>
@@ -369,12 +362,6 @@
       <name>tile_11</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Tunnel Tile 5</uri>
       <pose>40.000000 -20.000000 0.000000 0 0 3.141593</pose>
-    </include>
-
-    <include>
-      <name>extinguisher_1</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Fire Extinguisher</uri>
-      <pose>42.000000 -25.000000 0.004000 0 0 5.235988</pose>
     </include>
 
     <include>
@@ -402,26 +389,38 @@
     </include>
 
     <include>
-      <name>phone_1</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Samsung J8 Black</uri>
-      <pose>77.800000 -40.000000 0.004000 -1.570796 0 0.785398</pose>
+      <name>rescue_randy_1</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
+      <pose>41.300000 32.420000 0.000000 0 0 2.950000</pose>
+    </include>
+    <include>
+      <name>rescue_randy_2</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Rescue Randy</uri>
+      <pose>69.64 38.08 0.05 0.0 0.0 2.96</pose>
     </include>
 
     <include>
-      <name>barrel_1</name>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
-      <pose>40.0 15.0 0.0 0.0 0.0 1.5</pose>
+      <name>debris</name>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Tunnel Wall Debris</uri>
+      <pose>40.0 20.0 0.0 0.0 0.0 0.0</pose>
     </include>
 
-    <include>
-      <name>barrel_2</name>
-      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Construction Barrel</uri>
-      <pose>40.0 5.0 0.0 0.0 0.0 1.5</pose>
-    </include>
-
+    <!-- Inspection light near debris -->
+    <light type="point" name="inspection_light">
+      <pose>40.0 25.0 3.0 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>30</range>
+        <constant>0.3</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>false</cast_shadows>
+    </light>
 
     <model name="spot">
-      <pose>40.0 0.0 0.7 0.0 0.0 1.5</pose>
+      <pose>80.64 33.58 0.7 0.0 0.0 -3.11</pose>
       <include merge="true">
         <uri>package://spot_description/models/spot</uri>
       </include>

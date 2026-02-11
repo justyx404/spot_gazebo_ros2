@@ -8,7 +8,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     dlo_pkg = FindPackageShare('direct_lidar_odometry')
-    spot_nav_pkg = FindPackageShare('spot_navigation')
+    spot_nav_pkg = FindPackageShare('spot_bringup')
 
     rviz_cfg = LaunchConfiguration('rviz', default='false')
     declare_rviz_arg = DeclareLaunchArgument(

@@ -7,7 +7,6 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    spot_nav_pkg = FindPackageShare('spot_navigation')
     spot_bringup_pkg = FindPackageShare('spot_bringup')
 
     use_sim_time_arg = DeclareLaunchArgument(
@@ -30,7 +29,7 @@ def generate_launch_description():
     # Include DLO odometry launch file
     dlo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
-            PathJoinSubstitution([spot_nav_pkg, 'launch', 'dlo.launch.py'])
+            PathJoinSubstitution([spot_bringup_pkg, 'launch', 'dlo.launch.py'])
         ]),
         launch_arguments={
             'use_sim_time': LaunchConfiguration('use_sim_time'),
@@ -40,7 +39,7 @@ def generate_launch_description():
     # Include lidar localization launch file
     lidar_localization_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
-            PathJoinSubstitution([spot_nav_pkg, 'launch', 'lidar_localization.launch.py'])
+            PathJoinSubstitution([spot_bringup_pkg, 'launch', 'lidar_localization.launch.py'])
         ]),
         launch_arguments={
             'use_sim_time': LaunchConfiguration('use_sim_time'),
@@ -49,7 +48,7 @@ def generate_launch_description():
 
     local_planner_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
-            PathJoinSubstitution([spot_nav_pkg, 'launch', 'planner.launch.py'])
+            PathJoinSubstitution([spot_bringup_pkg, 'launch', 'planner.launch.py'])
         ]),
         launch_arguments={
             'use_sim_time': LaunchConfiguration('use_sim_time'),
@@ -58,7 +57,7 @@ def generate_launch_description():
     )
 
     # Launch RViz
-    rviz_config_path = PathJoinSubstitution([spot_nav_pkg, 'config', 'spot_nav_obstacle_avoidance.rviz'])
+    rviz_config_path = PathJoinSubstitution([spot_bringup_pkg, 'config', 'spot_nav_obstacle_avoidance.rviz'])
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',

@@ -9,7 +9,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
 def generate_launch_description():
-    spot_nav_pkg = FindPackageShare('spot_navigation')
+    spot_nav_pkg = FindPackageShare('spot_bringup')
 
     rviz_arg = DeclareLaunchArgument(
         'rviz',
